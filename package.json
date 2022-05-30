@@ -1,0 +1,49 @@
+{
+  "name": "docusaurus-remark-plugin-tab-blocks",
+  "version": "1.0.0",
+  "description": "Turn Docusaurus code blocks into tab blocks",
+  "license": "MIT",
+  "repository": "https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks.git",
+  "main": "index.js",
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "lint:eslint": "eslint . --ext js,ts",
+    "lint:prettier": "prettier . --write",
+    "test": "jest"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "docusaurus",
+    "remark",
+    "plugin",
+    "tab",
+    "tabblock",
+    "code",
+    "codeblock",
+    "markdown",
+    "md",
+    "mdx"
+  ],
+  "dependencies": {
+    "unist-util-is": "^4.0.0",
+    "unist-util-visit": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "babel-jest": "^28.1.0",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.4.2",
+    "jest": "^28.1.0",
+    "prettier": "^2.6.2",
+    "remark": "^12.0.0",
+    "remark-mdx": "^1.0.0"
+  },
+  "packageManager": "yarn@3.2.1"
+}
