@@ -33,20 +33,26 @@ npm install docusaurus-remark-plugin-tab-blocks
 
 Add the plugin to the `remarkPlugins` list of your Docusaurus config:
 
-```diff
+```js
 module.exports = {
   presets: [
     [
       "@docusaurus/preset-classic",
       {
         blog: {
-+         remarkPlugins: [require("docusaurus-remark-plugin-tab-blocks")],
+          remarkPlugins: [require("docusaurus-remark-plugin-tab-blocks")],
         },
         docs: {
-+         remarkPlugins: [require("docusaurus-remark-plugin-tab-blocks")],
+          remarkPlugins: [
+            require("docusaurus-remark-plugin-tab-blocks"),
+            {
+              // optional plugin configuration
+              labels: [["py", "Python"]],
+            },
+          ],
         },
         pages: {
-+         remarkPlugins: [require("docusaurus-remark-plugin-tab-blocks")],
+          remarkPlugins: [require("docusaurus-remark-plugin-tab-blocks")],
         },
       },
     ],
@@ -55,6 +61,16 @@ module.exports = {
 ```
 
 ## API Reference
+
+### Plugin configuration
+
+Configuration options can be passed to the plugin using the tuple form. See usage example above.
+
+#### `labels`
+
+- Default: `[["js", "JavaScript"], ["ts", "TypeScript"]]`
+
+List with tuples with code block language attribute and tab label text.
 
 ### `tab` options
 
@@ -96,8 +112,7 @@ The example above will be rendered like this:
 
 This is a young library. More features are on the way:
 
-- [ ] support for more languages (currently it work only with `js` and `ts` code blocks)
-- [ ] custom `label`
+- [ ] custom `label` for each tab
 - [ ] custom `groupId`
 
 If you have an idea or see a missing feature, just open an issue or send a PR.
