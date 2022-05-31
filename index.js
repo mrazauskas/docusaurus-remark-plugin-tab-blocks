@@ -8,10 +8,10 @@
 const visit = require("unist-util-visit");
 const is = require("unist-util-is");
 
-const labels = new Map([
+let tabLabel = [
   ["js", "JavaScript"],
   ["ts", "TypeScript"],
-]);
+];
 
 const importNodes = [
   {
@@ -34,12 +34,12 @@ function parseTabMeta(nodeMeta) {
 }
 
 function formatTabItem(nodes) {
+  const lang = nodes[0].lang;
+
   return [
     {
       type: "jsx",
-      value: `<TabItem value="${nodes[0].lang}" label="${labels.get(
-        nodes[0].lang
-      )}">`,
+      value: `<TabItem value="${lang}" label="${tabLabel.get(lang) || lang}">`,
     },
     ...nodes,
     {
@@ -95,8 +95,10 @@ function collectTabNodes(parent, index) {
   return tabNodes;
 }
 
-module.exports = function tabsPlugin() {
-  return (tree) => {
+module.exports = function plugin({ labels = [] } = {}) {
+  tabLabel = new Map([...tabLabel, ...labels]);
+
+  return function transformer(tree) {
     let hasTabs = false;
     let includesImportTabs = false;
 

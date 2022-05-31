@@ -354,6 +354,57 @@ Accepts a function that will be used as an implementation of the mock for one ca
 "
 `;
 
+exports[`tab blocks plugin supports custom labels 1`] = `
+"import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId=\\"code-examples\\">
+
+<TabItem value=\\"js\\" label=\\"javascript\\">
+
+\`\`\`js tab
+console.log(\\"custom javascript instead of default JavaScript label\\");
+\`\`\`
+
+</TabItem>
+
+<TabItem value=\\"typescript\\" label=\\"typescript\\">
+
+\`\`\`typescript tab
+console.log(\\"fallback typescript label\\");
+\`\`\`
+
+</TabItem>
+
+<TabItem value=\\"ts\\" label=\\"TypeScript\\">
+
+\`\`\`ts tab
+console.log(\\"default TypeScript label\\");
+\`\`\`
+
+</TabItem>
+
+<TabItem value=\\"python\\" label=\\"python\\">
+
+\`\`\`python tab
+print(\\"fallback python label\\");
+\`\`\`
+
+</TabItem>
+
+<TabItem value=\\"py\\" label=\\"Python\\">
+
+\`\`\`py tab
+print(\\"custom Python label\\");
+\`\`\`
+
+</TabItem>
+
+</Tabs>
+"
+`;
+
 exports[`tab blocks plugin supports span meta 1`] = `
 "import Tabs from '@theme/Tabs';
 
