@@ -5,7 +5,7 @@
 [![version](https://img.shields.io/npm/v/docusaurus-remark-plugin-tab-blocks.svg)](https://npmjs.com/package/docusaurus-remark-plugin-tab-blocks)
 [![license](https://img.shields.io/github/license/mrazauskas/docusaurus-remark-plugin-tab-blocks.svg)](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/LICENSE.md)
 
-This Docusaurus plugin allows transforming markdown [code blocks](https://docusaurus.io/docs/next/markdown-features/code-blocks) into [tabs](https://docusaurus.io/docs/next/markdown-features/tabs). Just include `tab` key in the language meta string:
+This Docusaurus plugin transforms markdown [code blocks](https://docusaurus.io/docs/next/markdown-features/code-blocks) into [tabs](https://docusaurus.io/docs/next/markdown-features/tabs). Just add the `tab` key to the language meta string:
 
     ```js tab
     console.log("Hello JavaScript tab!");
@@ -19,7 +19,7 @@ And you have:
 
 <img src="https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/.github/readme/quick-example.gif" width="640" />
 
-**Note:** The plugin only works with Docusaurus themes that have the `Tabs` and `TabItems` components.
+**Note:** A Docusaurus theme with the `Tabs` and `TabItems` components is required.
 
 ## Install
 
@@ -31,7 +31,7 @@ npm install docusaurus-remark-plugin-tab-blocks
 
 ## Usage
 
-Add the plugin to the `remarkPlugins` list of your Docusaurus config:
+Add the plugin to the `remarkPlugins` list of your [Docusaurus configuration](https://docusaurus.io/docs/configuration):
 
 ```js
 module.exports = {
@@ -44,11 +44,10 @@ module.exports = {
         },
         docs: {
           remarkPlugins: [
-            require("docusaurus-remark-plugin-tab-blocks"),
-            {
-              // optional plugin configuration
-              labels: [["py", "Python"]],
-            },
+            [
+              require("docusaurus-remark-plugin-tab-blocks"),
+              { labels: [["py", "Python"]] }, // optional plugin configuration
+            ],
           ],
         },
         pages: {
@@ -68,6 +67,7 @@ Configuration options can be passed to the plugin using the tuple form. See usag
 
 #### `labels`
 
+- Type: `Array<[string, string]>`
 - Default: `[["js", "JavaScript"], ["ts", "TypeScript"]]`
 
 List with tuples with code block language attribute and tab label text.
@@ -77,6 +77,8 @@ List with tuples with code block language attribute and tab label text.
 Each tab can be customized separately by assign a configuration object to the `tab` key. Keep in mind that the object must be parsable JSON.
 
 #### `span`
+
+- Type: `number`
 
 Use `span` option to make a tab span two or more code blocks.
 
