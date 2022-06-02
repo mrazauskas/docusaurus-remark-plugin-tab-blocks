@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value=\\"js\\" label=\\"JavaScript\\">
 
 \`\`\`js tab
-console.log(\\"this is JS\\");
+console.log('this is JS');
 \`\`\`
 
 </TabItem>
@@ -18,7 +18,7 @@ console.log(\\"this is JS\\");
 <TabItem value=\\"ts\\" label=\\"TypeScript\\">
 
 \`\`\`ts tab
-console.log(\\"this is TS\\");
+console.log('this is TS');
 \`\`\`
 
 </TabItem>
@@ -62,7 +62,7 @@ module.exports = config;
 <TabItem value=\\"ts\\" label=\\"TypeScript\\">
 
 \`\`\`ts tab
-import type { Config } from \\"jest\\";
+import type { Config } from 'jest';
 
 const config: Config = {
   fakeTimers: {
@@ -93,7 +93,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value=\\"js\\" label=\\"JavaScript\\">
 
 \`\`\`js tab
-console.log(\\"this is JS\\");
+console.log('this is JS');
 \`\`\`
 
 </TabItem>
@@ -101,7 +101,7 @@ console.log(\\"this is JS\\");
 <TabItem value=\\"ts\\" label=\\"TypeScript\\">
 
 \`\`\`ts tab
-console.log(\\"this is TS\\");
+console.log('this is TS');
 \`\`\`
 
 </TabItem>
@@ -116,7 +116,7 @@ exports[`tab blocks plugin does not re-import tabs components when already impor
 <TabItem value=\\"js\\" label=\\"JavaScript\\">
 
 \`\`\`js tab
-console.log(\\"this is JS\\");
+console.log('this is JS');
 \`\`\`
 
 </TabItem>
@@ -124,7 +124,7 @@ console.log(\\"this is JS\\");
 <TabItem value=\\"ts\\" label=\\"TypeScript\\">
 
 \`\`\`ts tab
-console.log(\\"this is TS\\");
+console.log('this is TS');
 \`\`\`
 
 </TabItem>
@@ -155,7 +155,7 @@ Allows for a label to be printed alongside a test while it is running. This beco
 \`\`\`js tab
 /** @type {import('jest').Config} */
 const config = {
-  displayName: \\"CLIENT\\",
+  displayName: 'CLIENT',
 };
 
 module.exports = config;
@@ -166,10 +166,10 @@ module.exports = config;
 <TabItem value=\\"ts\\" label=\\"TypeScript\\">
 
 \`\`\`ts tab
-import type { Config } from \\"jest\\";
+import type { Config } from 'jest';
 
 const config: Config = {
-  displayName: \\"CLIENT\\",
+  displayName: 'CLIENT',
 };
 
 export default config;
@@ -211,7 +211,7 @@ module.exports = config;
 <TabItem value=\\"ts\\" label=\\"TypeScript\\">
 
 \`\`\`ts tab
-import type { Config } from \\"jest\\";
+import type { Config } from 'jest';
 
 const config: Config = {
   fakeTimers: {
@@ -241,9 +241,9 @@ module.exports = class SomeClass {
 \`\`\`
 
 \`\`\`js title=\\"SomeClass.test.js\\"
-const SomeClass = require(\\"./SomeClass\\");
+const SomeClass = require('./SomeClass');
 
-jest.mock(\\"./SomeClass\\"); // this happens automatically with automocking
+jest.mock('./SomeClass'); // this happens automatically with automocking
 
 const mockMethod = jest.fn();
 SomeClass.mockImplementation(() => {
@@ -253,9 +253,9 @@ SomeClass.mockImplementation(() => {
 });
 
 const some = new SomeClass();
-some.method(\\"a\\", \\"b\\");
+some.method('a', 'b');
 
-console.log(\\"Calls to method: \\", mockMethod.mock.calls);
+console.log('Calls to method: ', mockMethod.mock.calls);
 \`\`\`
 
 </TabItem>
@@ -269,9 +269,9 @@ export class SomeClass {
 \`\`\`
 
 \`\`\`ts title=\\"SomeClass.test.ts\\"
-import { SomeClass } from \\"./SomeClass\\";
+import { SomeClass } from './SomeClass';
 
-jest.mock(\\"./SomeClass\\"); // this happens automatically with automocking
+jest.mock('./SomeClass'); // this happens automatically with automocking
 
 const mockMethod = jest.fn<(a: string, b: string) => void>();
 SomeClass.mockImplementation(() => {
@@ -281,9 +281,9 @@ SomeClass.mockImplementation(() => {
 });
 
 const some = new SomeClass();
-some.method(\\"a\\", \\"b\\");
+some.method('a', 'b');
 
-console.log(\\"Calls to method: \\", mockMethod.mock.calls);
+console.log('Calls to method: ', mockMethod.mock.calls);
 \`\`\`
 
 </TabItem>
@@ -294,25 +294,25 @@ console.log(\\"Calls to method: \\", mockMethod.mock.calls);
 
 exports[`tab blocks plugin ignores incomplete spans 1`] = `
 "\`\`\`js tab={\\"span\\":2}
-console.log(\\"this is first a codeblock\\");
+console.log('this is first a codeblock');
 \`\`\`
 
 \`\`\`js
-console.log(\\"this is second a codeblock\\");
+console.log('this is second a codeblock');
 \`\`\`
 
 \`\`\`js tab={\\"span\\":3}
-console.log(\\"this is first a codeblock\\");
+console.log('this is first a codeblock');
 \`\`\`
 
 \`\`\`js
-console.log(\\"this is second a codeblock\\");
+console.log('this is second a codeblock');
 \`\`\`
 
 Third codeblock went missing.
 
 \`\`\`ts tab={\\"span\\":2}
-console.log(\\"this is a code \\");
+console.log('this is a code ');
 \`\`\`
 "
 `;
@@ -364,7 +364,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value=\\"js\\" label=\\"javascript\\">
 
 \`\`\`js tab
-console.log(\\"custom javascript instead of default JavaScript label\\");
+console.log('custom javascript instead of default JavaScript label');
 \`\`\`
 
 </TabItem>
@@ -372,7 +372,7 @@ console.log(\\"custom javascript instead of default JavaScript label\\");
 <TabItem value=\\"typescript\\" label=\\"typescript\\">
 
 \`\`\`typescript tab
-console.log(\\"fallback typescript label\\");
+console.log('fallback typescript label');
 \`\`\`
 
 </TabItem>
@@ -380,7 +380,7 @@ console.log(\\"fallback typescript label\\");
 <TabItem value=\\"ts\\" label=\\"TypeScript\\">
 
 \`\`\`ts tab
-console.log(\\"default TypeScript label\\");
+console.log('default TypeScript label');
 \`\`\`
 
 </TabItem>
@@ -388,7 +388,7 @@ console.log(\\"default TypeScript label\\");
 <TabItem value=\\"python\\" label=\\"python\\">
 
 \`\`\`python tab
-print(\\"fallback python label\\");
+print('fallback python label');
 \`\`\`
 
 </TabItem>
@@ -396,7 +396,7 @@ print(\\"fallback python label\\");
 <TabItem value=\\"py\\" label=\\"Python\\">
 
 \`\`\`py tab
-print(\\"custom Python label\\");
+print('custom Python label');
 \`\`\`
 
 </TabItem>
@@ -415,11 +415,11 @@ import TabItem from '@theme/TabItem';
 <TabItem value=\\"js\\" label=\\"JavaScript\\">
 
 \`\`\`js tab={\\"span\\":2}
-console.log(\\"this is first JS codeblock in a tab\\");
+console.log('this is first JS codeblock in a tab');
 \`\`\`
 
 \`\`\`js
-console.log(\\"this is second JS codeblock in a tab\\");
+console.log('this is second JS codeblock in a tab');
 \`\`\`
 
 </TabItem>
@@ -427,11 +427,11 @@ console.log(\\"this is second JS codeblock in a tab\\");
 <TabItem value=\\"ts\\" label=\\"TypeScript\\">
 
 \`\`\`ts tab={\\"span\\":2}
-console.log(\\"this is first TS codeblock in a tab\\");
+console.log('this is first TS codeblock in a tab');
 \`\`\`
 
 \`\`\`ts
-console.log(\\"this is second TS codeblock in a tab\\");
+console.log('this is second TS codeblock in a tab');
 \`\`\`
 
 </TabItem>
@@ -441,7 +441,7 @@ console.log(\\"this is second TS codeblock in a tab\\");
 Some text
 
 \`\`\`ts title=\\"some-file.ts\\"
-console.log(\\"this is just code\\");
+console.log('this is just code');
 \`\`\`
 "
 `;

@@ -8,11 +8,11 @@
 This Docusaurus plugin transforms markdown [code blocks](https://docusaurus.io/docs/next/markdown-features/code-blocks) into [tabs](https://docusaurus.io/docs/next/markdown-features/tabs). Just add the `tab` key to the language meta string:
 
     ```js tab
-    console.log("Hello JavaScript tab!");
+    console.log('Hello JavaScript tab!');
     ```
 
     ```ts tab
-    console.log("Ahoy TypeScript tab!");
+    console.log('Ahoy TypeScript tab!');
     ```
 
 And you have:
@@ -37,21 +37,21 @@ Add the plugin to the `remarkPlugins` list of your [Docusaurus configuration](ht
 module.exports = {
   presets: [
     [
-      "@docusaurus/preset-classic",
+      '@docusaurus/preset-classic',
       {
         blog: {
-          remarkPlugins: [require("docusaurus-remark-plugin-tab-blocks")],
+          remarkPlugins: [require('docusaurus-remark-plugin-tab-blocks')],
         },
         docs: {
           remarkPlugins: [
             [
-              require("docusaurus-remark-plugin-tab-blocks"),
-              { labels: [["py", "Python"]] }, // optional plugin configuration
+              require('docusaurus-remark-plugin-tab-blocks'),
+              { labels: [['py', 'Python']] }, // optional plugin configuration
             ],
           ],
         },
         pages: {
-          remarkPlugins: [require("docusaurus-remark-plugin-tab-blocks")],
+          remarkPlugins: [require('docusaurus-remark-plugin-tab-blocks')],
         },
       },
     ],
@@ -68,7 +68,7 @@ Configuration options can be passed to the plugin using the tuple form. See usag
 #### `labels`
 
 - Type: `Array<[string, string]>`
-- Default: `[["js", "JavaScript"], ["ts", "TypeScript"]]`
+- Default: `[['js', 'JavaScript'], ['ts', 'TypeScript']]`
 
 List with tuples with code block language attribute and tab label text.
 
@@ -89,7 +89,7 @@ Use `span` option to make a tab span two or more code blocks.
     ```
 
     ```js title="SomeClass.test.js"
-    const SomeClass = require("./SomeClass");
+    const SomeClass = require('./SomeClass');
 
     // this and previous code blocks live in a single tab
     ```
@@ -101,7 +101,7 @@ Use `span` option to make a tab span two or more code blocks.
     ```
 
     ```ts title="SomeClass.test.ts"
-    import { SomeClass } from "./SomeClass";
+    import { SomeClass } from './SomeClass';
 
     // this and previous code blocks live in a single tab
     ```

@@ -7,17 +7,17 @@ Allows for a label to be printed alongside a test while it is running. This beco
 ```js tab
 /** @type {import('jest').Config} */
 const config = {
-  displayName: "CLIENT",
+  displayName: 'CLIENT',
 };
 
 module.exports = config;
 ```
 
 ```ts tab
-import type { Config } from "jest";
+import type { Config } from 'jest';
 
 const config: Config = {
-  displayName: "CLIENT",
+  displayName: 'CLIENT',
 };
 
 export default config;
@@ -47,7 +47,7 @@ module.exports = config;
 ```
 
 ```ts tab
-import type { Config } from "jest";
+import type { Config } from 'jest';
 
 const config: Config = {
   fakeTimers: {
@@ -69,9 +69,9 @@ module.exports = class SomeClass {
 ```
 
 ```js title="SomeClass.test.js"
-const SomeClass = require("./SomeClass");
+const SomeClass = require('./SomeClass');
 
-jest.mock("./SomeClass"); // this happens automatically with automocking
+jest.mock('./SomeClass'); // this happens automatically with automocking
 
 const mockMethod = jest.fn();
 SomeClass.mockImplementation(() => {
@@ -81,9 +81,9 @@ SomeClass.mockImplementation(() => {
 });
 
 const some = new SomeClass();
-some.method("a", "b");
+some.method('a', 'b');
 
-console.log("Calls to method: ", mockMethod.mock.calls);
+console.log('Calls to method: ', mockMethod.mock.calls);
 ```
 
 ```ts tab={"span":2} title="SomeClass.ts"
@@ -93,9 +93,9 @@ export class SomeClass {
 ```
 
 ```ts title="SomeClass.test.ts"
-import { SomeClass } from "./SomeClass";
+import { SomeClass } from './SomeClass';
 
-jest.mock("./SomeClass"); // this happens automatically with automocking
+jest.mock('./SomeClass'); // this happens automatically with automocking
 
 const mockMethod = jest.fn<(a: string, b: string) => void>();
 SomeClass.mockImplementation(() => {
@@ -105,7 +105,7 @@ SomeClass.mockImplementation(() => {
 });
 
 const some = new SomeClass();
-some.method("a", "b");
+some.method('a', 'b');
 
-console.log("Calls to method: ", mockMethod.mock.calls);
+console.log('Calls to method: ', mockMethod.mock.calls);
 ```
