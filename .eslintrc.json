@@ -16,7 +16,6 @@
     "no-nested-ternary": "error",
     "no-useless-concat": "error",
     "prefer-template": "error",
-    "sort-imports": "error",
     "sort-keys": "error"
   }
 }

@@ -65,12 +65,26 @@ module.exports = {
 
 Configuration options can be passed to the plugin using the tuple form. See usage example above.
 
+#### `groupId`
+
+- Type: `string`
+- Default: `'code-examples'`
+
+The [`groupId`](https://docusaurus.io/docs/markdown-features/tabs#syncing-tab-choices) property for all instances of `Tabs` component created by this plugin. Applicable only if `sync` option is set to `true`.
+
 #### `labels`
 
 - Type: `Array<[string, string]>`
 - Default: `[['js', 'JavaScript'], ['ts', 'TypeScript']]`
 
 List with tuples with code block language attribute and tab label text.
+
+#### `sync`
+
+- Type: `boolean`
+- Default: `true`
+
+Whether tab choices should be [synced](https://docusaurus.io/docs/markdown-features/tabs#syncing-tab-choices) between all tabs created by this plugin.
 
 ### `tab` options
 
@@ -115,7 +129,6 @@ The example above will be rendered like this:
 This is a young library. More features are on the way:
 
 - [ ] custom `label` for each tab
-- [ ] custom `groupId`
 
 If you have an idea or see a missing feature, just open an issue or send a PR.
 

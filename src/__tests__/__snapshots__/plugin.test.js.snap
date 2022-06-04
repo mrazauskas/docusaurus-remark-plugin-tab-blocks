@@ -354,7 +354,34 @@ Accepts a function that will be used as an implementation of the mock for one ca
 "
 `;
 
-exports[`tab blocks plugin supports custom labels 1`] = `
+exports[`tab blocks plugin supports \`groupId\` option 1`] = `
+"import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId=\\"some-test-group\\">
+
+<TabItem value=\\"js\\" label=\\"JavaScript\\">
+
+\`\`\`js tab
+console.log('this is JS');
+\`\`\`
+
+</TabItem>
+
+<TabItem value=\\"ts\\" label=\\"TypeScript\\">
+
+\`\`\`ts tab
+console.log('this is TS');
+\`\`\`
+
+</TabItem>
+
+</Tabs>
+"
+`;
+
+exports[`tab blocks plugin supports \`labels\` option 1`] = `
 "import Tabs from '@theme/Tabs';
 
 import TabItem from '@theme/TabItem';
@@ -369,7 +396,7 @@ console.log('custom javascript instead of default JavaScript label');
 
 </TabItem>
 
-<TabItem value=\\"typescript\\" label=\\"typescript\\">
+<TabItem value=\\"typescript\\">
 
 \`\`\`typescript tab
 console.log('fallback typescript label');
@@ -385,7 +412,7 @@ console.log('default TypeScript label');
 
 </TabItem>
 
-<TabItem value=\\"python\\" label=\\"python\\">
+<TabItem value=\\"python\\">
 
 \`\`\`python tab
 print('fallback python label');
@@ -405,7 +432,7 @@ print('custom Python label');
 "
 `;
 
-exports[`tab blocks plugin supports span meta 1`] = `
+exports[`tab blocks plugin supports \`span\` meta 1`] = `
 "import Tabs from '@theme/Tabs';
 
 import TabItem from '@theme/TabItem';
@@ -443,5 +470,32 @@ Some text
 \`\`\`ts title=\\"some-file.ts\\"
 console.log('this is just code');
 \`\`\`
+"
+`;
+
+exports[`tab blocks plugin supports \`sync\` option 1`] = `
+"import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value=\\"js\\" label=\\"JavaScript\\">
+
+\`\`\`js tab
+console.log('this is JS');
+\`\`\`
+
+</TabItem>
+
+<TabItem value=\\"ts\\" label=\\"TypeScript\\">
+
+\`\`\`ts tab
+console.log('this is TS');
+\`\`\`
+
+</TabItem>
+
+</Tabs>
 "
 `;
