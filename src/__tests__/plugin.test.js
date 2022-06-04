@@ -2,14 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import remark from "remark";
 import remarkMdx from "remark-mdx";
-
-afterEach(() => {
-  jest.resetModules();
-});
+import { plugin as tabBlocksPlugin } from "../plugin";
 
 async function processFixture(fixture, options) {
-  const tabBlocksPlugin = (await import("../")).default;
-
   const filePath = path.join(__dirname, "__fixtures__", `${fixture}.md`);
   const file = fs.readFileSync(filePath);
 
@@ -46,7 +41,7 @@ describe("tab blocks plugin", () => {
     expect(result).toMatchSnapshot();
   });
 
-  test("supports custom labels", async () => {
+  test("supports `labels` option", async () => {
     const result = await processFixture("label", {
       labels: [
         ["js", "javascript"],
@@ -57,8 +52,20 @@ describe("tab blocks plugin", () => {
     expect(result).toMatchSnapshot();
   });
 
-  test("supports span meta", async () => {
+  test("supports `groupId` option", async () => {
+    const result = await processFixture("base", { groupId: "some-test-group" });
+
+    expect(result).toMatchSnapshot();
+  });
+
+  test("supports `span` meta", async () => {
     const result = await processFixture("span");
+
+    expect(result).toMatchSnapshot();
+  });
+
+  test("supports `sync` option", async () => {
+    const result = await processFixture("base", { sync: false });
 
     expect(result).toMatchSnapshot();
   });

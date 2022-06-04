@@ -1,11 +1,6 @@
 const visit = require("unist-util-visit");
 const is = require("unist-util-is");
 
-let tabLabel = [
-  ["js", "JavaScript"],
-  ["ts", "TypeScript"],
-];
-
 const importNodes = [
   {
     type: "import",
@@ -26,27 +21,28 @@ function parseTabMeta(nodeMeta) {
   return { span: 1, ...JSON.parse(tabMeta) };
 }
 
-function formatTabItem(nodes) {
-  const lang = nodes[0].lang;
+function formatTabs(tabNodes, { groupId, labels, sync }) {
+  function formatTabItem(nodes) {
+    const lang = nodes[0].lang;
+    const label = labels.get(lang);
+
+    return [
+      {
+        type: "jsx",
+        value: `<TabItem value="${lang}"${label ? ` label="${label}"` : ""}>`,
+      },
+      ...nodes,
+      {
+        type: "jsx",
+        value: "</TabItem>",
+      },
+    ];
+  }
 
   return [
     {
       type: "jsx",
-      value: `<TabItem value="${lang}" label="${tabLabel.get(lang) || lang}">`,
-    },
-    ...nodes,
-    {
-      type: "jsx",
-      value: "</TabItem>",
-    },
-  ];
-}
-
-function formatTabs(tabNodes) {
-  return [
-    {
-      type: "jsx",
-      value: '<Tabs groupId="code-examples">',
+      value: `<Tabs${sync ? ` groupId="${groupId}"` : ""}>`,
     },
     ...tabNodes.map((node) => formatTabItem(node)),
     {
@@ -88,8 +84,20 @@ function collectTabNodes(parent, index) {
   return tabNodes;
 }
 
-module.exports = function plugin({ labels = [] } = {}) {
-  tabLabel = new Map([...tabLabel, ...labels]);
+function resolveConfig(options) {
+  return {
+    groupId: options.groupId || "code-examples",
+    labels: new Map([
+      ["js", "JavaScript"],
+      ["ts", "TypeScript"],
+      ...(options.labels || []),
+    ]),
+    sync: options.sync ?? true,
+  };
+}
+
+function plugin(options = {}) {
+  const config = resolveConfig(options);
 
   return function transformer(tree) {
     let hasTabs = false;
@@ -106,7 +114,7 @@ module.exports = function plugin({ labels = [] } = {}) {
       if (!tabNodes) return;
 
       hasTabs = true;
-      const tabs = formatTabs(tabNodes);
+      const tabs = formatTabs(tabNodes, config);
 
       parent.children.splice(index, tabNodes.flat().length, ...tabs);
 
@@ -117,4 +125,6 @@ module.exports = function plugin({ labels = [] } = {}) {
       tree.children.unshift(...importNodes);
     }
   };
-};
+}
+
+module.exports = { plugin };
