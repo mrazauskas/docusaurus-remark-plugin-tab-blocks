@@ -55,7 +55,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.18.0":
+"@babel/core@npm:7.18.2, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3":
   version: 7.18.2
   resolution: "@babel/core@npm:7.18.2"
   dependencies:
@@ -1183,7 +1183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.18.0":
+"@babel/preset-env@npm:7.18.2":
   version: 7.18.2
   resolution: "@babel/preset-env@npm:7.18.2"
   dependencies:
@@ -2113,7 +2113,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-jest@npm:^28.1.0":
+"babel-jest@npm:28.1.0, babel-jest@npm:^28.1.0":
   version: 28.1.0
   resolution: "babel-jest@npm:28.1.0"
   dependencies:
@@ -2672,16 +2672,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docusaurus-remark-plugin-tab-blocks@workspace:."
   dependencies:
-    "@babel/core": ^7.18.0
-    "@babel/preset-env": ^7.18.0
-    babel-jest: ^28.1.0
-    eslint: ^8.16.0
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-jest: ^26.4.2
-    jest: ^28.1.0
-    prettier: ^2.6.2
-    remark: ^12.0.0
-    remark-mdx: ^1.0.0
+    "@babel/core": 7.18.2
+    "@babel/preset-env": 7.18.2
+    babel-jest: 28.1.0
+    eslint: 8.17.0
+    eslint-config-prettier: 8.5.0
+    eslint-plugin-jest: 26.5.3
+    jest: 28.1.0
+    prettier: 2.6.2
+    remark: 12.0.1
+    remark-mdx: 1.6.22
     unist-util-is: ^4.0.0
     unist-util-visit: ^2.0.0
   languageName: unknown
@@ -2768,7 +2768,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.5.0":
+"eslint-config-prettier@npm:8.5.0":
   version: 8.5.0
   resolution: "eslint-config-prettier@npm:8.5.0"
   peerDependencies:
@@ -2779,7 +2779,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^26.4.2":
+"eslint-plugin-jest@npm:26.5.3":
   version: 26.5.3
   resolution: "eslint-plugin-jest@npm:26.5.3"
   dependencies:
@@ -2841,7 +2841,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.16.0":
+"eslint@npm:8.17.0":
   version: 8.17.0
   resolution: "eslint@npm:8.17.0"
   dependencies:
@@ -4065,7 +4065,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^28.1.0":
+"jest@npm:28.1.0":
   version: 28.1.0
   resolution: "jest@npm:28.1.0"
   dependencies:
@@ -4733,7 +4733,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.6.2":
+"prettier@npm:2.6.2":
   version: 2.6.2
   resolution: "prettier@npm:2.6.2"
   bin:
@@ -4884,7 +4884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-mdx@npm:^1.0.0":
+"remark-mdx@npm:1.6.22":
   version: 1.6.22
   resolution: "remark-mdx@npm:1.6.22"
   dependencies:
@@ -4946,7 +4946,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark@npm:^12.0.0":
+"remark@npm:12.0.1":
   version: 12.0.1
   resolution: "remark@npm:12.0.1"
   dependencies:

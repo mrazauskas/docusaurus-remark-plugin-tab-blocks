@@ -37,16 +37,16 @@
     "unist-util-visit": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.0",
-    "@babel/preset-env": "^7.18.0",
-    "babel-jest": "^28.1.0",
-    "eslint": "^8.16.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-jest": "^26.4.2",
-    "jest": "^28.1.0",
-    "prettier": "^2.6.2",
-    "remark": "^12.0.0",
-    "remark-mdx": "^1.0.0"
+    "@babel/core": "7.18.2",
+    "@babel/preset-env": "7.18.2",
+    "babel-jest": "28.1.0",
+    "eslint": "8.17.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-jest": "26.5.3",
+    "jest": "28.1.0",
+    "prettier": "2.6.2",
+    "remark": "12.0.1",
+    "remark-mdx": "1.6.22"
   },
   "resolutions": {
     "trim@0.0.1": "0.0.3"
