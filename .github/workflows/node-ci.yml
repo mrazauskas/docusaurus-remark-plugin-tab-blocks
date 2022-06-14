@@ -68,3 +68,20 @@ jobs:
           cache: yarn
       - run: yarn install
       - run: yarn test
+
+  test-coverage:
+    name: Test on Ubuntu with coverage using Node.js LTS
+    runs-on: ubuntu-latest
+    needs: prepare-yarn-cache
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+      - run: yarn install
+      - run: yarn test --coverage
+      - uses: codecov/codecov-action@v3
+        with:
+          directory: "./coverage"
