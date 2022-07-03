@@ -11,7 +11,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: lts/*
-          registry-url: "https://registry.npmjs.org"
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: yarn config set npmAuthToken ${{ secrets.NPM_TOKEN }}
+      - run: yarn config set npmPublishAccess public
+      - run: yarn npm publish
