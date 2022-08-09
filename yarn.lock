@@ -2694,7 +2694,7 @@ __metadata:
     babel-jest: 28.1.3
     eslint: 8.21.0
     eslint-config-prettier: 8.5.0
-    eslint-plugin-jest: 26.8.0
+    eslint-plugin-jest: 26.8.1
     jest: 28.1.3
     prettier: 2.7.1
     remark: 12.0.1
@@ -2796,9 +2796,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:26.8.0":
-  version: 26.8.0
-  resolution: "eslint-plugin-jest@npm:26.8.0"
+"eslint-plugin-jest@npm:26.8.1":
+  version: 26.8.1
+  resolution: "eslint-plugin-jest@npm:26.8.1"
   dependencies:
     "@typescript-eslint/utils": ^5.10.0
   peerDependencies:
@@ -2809,7 +2809,7 @@ __metadata:
       optional: true
     jest:
       optional: true
-  checksum: 5dceef6c58422d912e29346be86940ad24602026517a92ce61ddb29814c2185609887a1ea0b6061080ca19d9ee6749549d3424102b28620088e53ec45aefa915
+  checksum: bd50499f9b1fd12e701cf918b23e1220fb78161085205c4d0bb2146d60a5f0db84de3fea1f4a3467629e00c092c1b57473f41983449a0daae03e19e932f00587
   languageName: node
   linkType: hard
 
