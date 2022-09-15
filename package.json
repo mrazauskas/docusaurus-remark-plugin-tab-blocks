@@ -37,8 +37,8 @@
     "unist-util-visit": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.19.0",
-    "@babel/preset-env": "7.19.0",
+    "@babel/core": "7.19.1",
+    "@babel/preset-env": "7.19.1",
     "babel-jest": "29.0.2",
     "eslint": "8.23.1",
     "eslint-config-prettier": "8.5.0",
