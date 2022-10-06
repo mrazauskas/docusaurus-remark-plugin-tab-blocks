@@ -51,5 +51,5 @@
   "resolutions": {
     "trim@0.0.1": "0.0.3"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.2.4"
 }
