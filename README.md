@@ -21,7 +21,7 @@ And you have:
 
 <img src="https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/.github/readme/quick-example.gif" width="640" />
 
-**Note:** A Docusaurus theme with the `Tabs` and `TabItems` components is required.
+> **Note** A Docusaurus theme with the `Tabs` and `TabItems` components is required.
 
 ## Install
 
