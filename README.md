@@ -126,7 +126,7 @@ The example above will be rendered like this:
 
 <img src="https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/.github/readme/span-example.gif" width="640" />
 
-## Road Map
+## Planned
 
 This is a young library. More features are on the way:
 
