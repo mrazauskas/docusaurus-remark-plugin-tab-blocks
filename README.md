@@ -4,7 +4,7 @@
 
 [![version](https://img.shields.io/npm/v/docusaurus-remark-plugin-tab-blocks)](https://npmjs.com/package/docusaurus-remark-plugin-tab-blocks)
 [![license](https://img.shields.io/github/license/mrazauskas/docusaurus-remark-plugin-tab-blocks)](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/LICENSE.md)
-[![node-ci](https://img.shields.io/github/workflow/status/mrazauskas/docusaurus-remark-plugin-tab-blocks/node-ci?label=CI)](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/actions/workflows/node-ci.yml)
+[![node-ci](https://img.shields.io/github/actions/workflow/status/mrazauskas/docusaurus-remark-plugin-tab-blocks/node-ci.yml?label=CI)](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/actions/workflows/node-ci.yml)
 [![coverage](https://img.shields.io/codecov/c/github/mrazauskas/docusaurus-remark-plugin-tab-blocks/main)](https://app.codecov.io/gh/mrazauskas/docusaurus-remark-plugin-tab-blocks)
 
 This Docusaurus plugin transforms markdown [code blocks](https://docusaurus.io/docs/next/markdown-features/code-blocks) into [tabs](https://docusaurus.io/docs/next/markdown-features/tabs). Just add the `tab` key to the language meta string:
