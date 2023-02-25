@@ -6,7 +6,7 @@ title: Configuring Jest
 The configuration file should simply export an object:
 
 ```js tab
-/** @type {import('jest').Config} */
+/** @type {import("jest").Config} */
 const config = {
   verbose: true,
 };
@@ -15,7 +15,7 @@ module.exports = config;
 ```
 
 ```ts tab
-import type {Config} from 'jest';
+import type { Config } from "jest";
 
 const config: Config = {
   verbose: true,
