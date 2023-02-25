@@ -26,9 +26,9 @@ And you have:
 ## Install
 
 ```bash
-yarn add docusaurus-remark-plugin-tab-blocks
-# or
 npm install docusaurus-remark-plugin-tab-blocks
+# or
+yarn add docusaurus-remark-plugin-tab-blocks
 ```
 
 ## Usage
@@ -92,11 +92,25 @@ Whether tab choices should be [synced](https://docusaurus.io/docs/markdown-featu
 
 Each tab can be customized separately by assign a configuration object to the `tab` key. Keep in mind that the object must be parsable JSON.
 
+#### `label`
+
+- Type: `string`
+
+Sets custom tab label text.
+
+    ```bash tab={"label":"npm"}
+    npm install docusaurus-remark-plugin-tab-blocks
+    ```
+
+    ```bash tab={"label":"yarn"}
+    yarn add docusaurus-remark-plugin-tab-blocks
+    ```
+
 #### `span`
 
 - Type: `number`
 
-Use `span` option to make a tab span two or more code blocks.
+Makes a single tab wrap two or more code blocks.
 
     ```js tab={"span":2} title="SomeClass.js"
     module.exports = class SomeClass {
@@ -125,14 +139,6 @@ Use `span` option to make a tab span two or more code blocks.
 The example above will be rendered like this:
 
 <img src="https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/.github/readme/span-example.gif" width="640" />
-
-## Planned
-
-This is a young library. More features are on the way:
-
-- [ ] custom `label` for each tab
-
-If you have an idea or see a missing feature, just open an issue or send a PR.
 
 ## License
 

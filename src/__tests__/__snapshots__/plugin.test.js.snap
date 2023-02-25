@@ -428,6 +428,22 @@ print('custom Python label');
 
 </TabItem>
 
+<TabItem value="macos" label="macOS">
+
+\`\`\`bash tab={"label":"macOS"}
+custom macOS label
+\`\`\`
+
+</TabItem>
+
+<TabItem value="windows" label="Windows">
+
+\`\`\`bash tab={"label":"Windows"}
+custom Windows label
+\`\`\`
+
+</TabItem>
+
 </Tabs>
 "
 `;
