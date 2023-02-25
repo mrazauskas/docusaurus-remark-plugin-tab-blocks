@@ -48,7 +48,14 @@ module.exports = {
           remarkPlugins: [
             [
               require("docusaurus-remark-plugin-tab-blocks"),
-              { labels: [["py", "Python"]] }, // optional plugin configuration
+              // optional plugin configuration
+              {
+                labels: [
+                  ["json", "JSON"],
+                  ["jsx", "JSX"],
+                  ["tsx", "TSX"],
+                ],
+              },
             ],
           ],
         },
