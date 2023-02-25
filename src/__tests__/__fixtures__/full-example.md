@@ -1,3 +1,38 @@
+---
+id: configuration
+title: Configuring Jest
+---
+
+The configuration file should simply export an object:
+
+```js tab
+/** @type {import("jest").Config} */
+const config = {
+  verbose: true,
+};
+
+module.exports = config;
+```
+
+```ts tab
+import type { Config } from "jest";
+
+const config: Config = {
+  verbose: true,
+};
+
+export default config;
+```
+
+```json tab={"label":"JSON"}
+{
+  "name": "my-project",
+  "jest": {
+    "verbose": true
+  }
+}
+```
+
 ### `displayName` \[string, object]
 
 Default: `undefined`

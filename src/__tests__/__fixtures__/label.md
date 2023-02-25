@@ -17,3 +17,11 @@ print('fallback python label');
 ```py tab
 print('custom Python label');
 ```
+
+```bash tab={"label":"macOS"}
+custom macOS label
+```
+
+```bash tab={"label":"Windows"}
+custom Windows label
+```

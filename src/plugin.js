@@ -12,7 +12,7 @@ const importNodes = [
   },
 ];
 
-function parseTabMeta(nodeMeta) {
+function parseMeta(nodeMeta) {
   const tabTag = nodeMeta.split(" ").filter((tag) => tag.startsWith("tab"));
   if (tabTag.length < 1) return null;
 
@@ -22,14 +22,15 @@ function parseTabMeta(nodeMeta) {
 }
 
 function formatTabs(tabNodes, { groupId, labels, sync }) {
-  function formatTabItem(nodes) {
+  function formatTabItem(nodes, meta) {
     const lang = nodes[0].lang;
-    const label = labels.get(lang);
+    const label = meta.label ?? labels.get(lang);
+    const value = meta.label?.toLowerCase() ?? lang;
 
     return [
       {
         type: "jsx",
-        value: `<TabItem value="${lang}"${label ? ` label="${label}"` : ""}>`,
+        value: `<TabItem value="${value}"${label ? ` label="${label}"` : ""}>`,
       },
       ...nodes,
       {
@@ -44,7 +45,7 @@ function formatTabs(tabNodes, { groupId, labels, sync }) {
       type: "jsx",
       value: `<Tabs${sync ? ` groupId="${groupId}"` : ""}>`,
     },
-    ...tabNodes.map((node) => formatTabItem(node)),
+    ...tabNodes.map(([nodes, meta]) => formatTabItem(nodes, meta)),
     {
       type: "jsx",
       value: "</Tabs>",
@@ -60,17 +61,17 @@ function collectTabNodes(parent, index) {
     const node = parent.children[nodeIndex];
 
     if (is(node, "code") && typeof node.meta === "string") {
-      const tabMeta = parseTabMeta(node.meta);
-      if (!tabMeta) break;
+      const meta = parseMeta(node.meta);
+      if (!meta) break;
 
-      const nodes = parent.children.slice(nodeIndex, nodeIndex + tabMeta.span);
+      const nodes = parent.children.slice(nodeIndex, nodeIndex + meta.span);
 
       if (
-        nodes.length === tabMeta.span &&
+        nodes.length === meta.span &&
         nodes.every((node) => is(node, "code"))
       ) {
-        tabNodes.push(nodes);
-        nodeIndex += tabMeta.span;
+        tabNodes.push([nodes, meta]);
+        nodeIndex += meta.span;
       } else {
         break;
       }
@@ -115,8 +116,9 @@ function plugin(options = {}) {
 
       hasTabs = true;
       const tabs = formatTabs(tabNodes, config);
+      const replacedCount = tabNodes.map(([nodes]) => nodes).flat().length;
 
-      parent.children.splice(index, tabNodes.flat().length, ...tabs);
+      parent.children.splice(index, replacedCount, ...tabs);
 
       return index + tabs.length;
     });
