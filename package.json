@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint . --ext js,ts",
-    "lint:prettier": "prettier . --write",
+    "lint:prettier": "prettier . --no-config --write",
     "test": "jest"
   },
   "files": [

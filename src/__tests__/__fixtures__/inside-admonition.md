@@ -20,7 +20,7 @@ module.exports = config;
 ```
 
 ```ts tab
-import type { Config } from 'jest';
+import type { Config } from "jest";
 
 const config: Config = {
   fakeTimers: {
