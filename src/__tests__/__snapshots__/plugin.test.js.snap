@@ -142,6 +142,58 @@ exports[`tab blocks plugin full example 1`] = `
 
 import TabItem from '@theme/TabItem';
 
+* * *
+
+id: configuration
+
+## title: Configuring Jest
+
+The configuration file should simply export an object:
+
+<Tabs groupId="code-examples">
+
+<TabItem value="js" label="JavaScript">
+
+\`\`\`js tab
+/** @type {import('jest').Config} */
+const config = {
+  verbose: true,
+};
+
+module.exports = config;
+\`\`\`
+
+</TabItem>
+
+<TabItem value="ts" label="TypeScript">
+
+\`\`\`ts tab
+import type {Config} from 'jest';
+
+const config: Config = {
+  verbose: true,
+};
+
+export default config;
+\`\`\`
+
+</TabItem>
+
+<TabItem value="json" label="JSON">
+
+\`\`\`json tab={"label":"JSON"}
+{
+  "name": "my-project",
+  "jest": {
+    "verbose": true
+  }
+}
+\`\`\`
+
+</TabItem>
+
+</Tabs>
+
 ### \`displayName\` \\[string, object]
 
 Default: \`undefined\`
