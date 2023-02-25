@@ -155,7 +155,7 @@ The configuration file should simply export an object:
 <TabItem value="js" label="JavaScript">
 
 \`\`\`js tab
-/** @type {import('jest').Config} */
+/** @type {import("jest").Config} */
 const config = {
   verbose: true,
 };
@@ -168,7 +168,7 @@ module.exports = config;
 <TabItem value="ts" label="TypeScript">
 
 \`\`\`ts tab
-import type {Config} from 'jest';
+import type { Config } from "jest";
 
 const config: Config = {
   verbose: true,
