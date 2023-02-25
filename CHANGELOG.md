@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.0] - 2023-02-25
+
+### Added
+
+- Add support for custom tab `label` text ([#132](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/pull/132))
+
 ## [1.2.0] - 2022-06-04
 
 ### Added
@@ -16,6 +22,7 @@
 
 _First release._
 
+[1.3.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v1.3.0
 [1.2.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v1.2.0
 [1.1.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v1.1.0
 [1.0.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v1.0.0
