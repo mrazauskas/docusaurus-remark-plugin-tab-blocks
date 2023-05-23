@@ -1,16 +1,46 @@
 const visit = require("unist-util-visit");
 const is = require("unist-util-is");
 
-const importNodes = [
-  {
-    type: "import",
-    value: "import Tabs from '@theme/Tabs';",
+const importNodes = {
+  data: {
+    estree: {
+      body: [
+        {
+          source: {
+            raw: "'@theme/Tabs'",
+            type: "Literal",
+            value: "@theme/Tabs",
+          },
+          specifiers: [
+            {
+              local: { name: "Tabs", type: "Identifier" },
+              type: "ImportDefaultSpecifier",
+            },
+          ],
+          type: "ImportDeclaration",
+        },
+        {
+          source: {
+            raw: "'@theme/TabItem'",
+            type: "Literal",
+            value: "@theme/TabItem",
+          },
+          specifiers: [
+            {
+              local: { name: "TabItem", type: "Identifier" },
+              type: "ImportDefaultSpecifier",
+            },
+          ],
+          type: "ImportDeclaration",
+        },
+      ],
+      type: "Program",
+    },
   },
-  {
-    type: "import",
-    value: "import TabItem from '@theme/TabItem';",
-  },
-];
+  type: "mdxjsEsm",
+  value:
+    "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';",
+};
 
 function parseMeta(nodeMeta) {
   const tabTag = nodeMeta.split(" ").filter((tag) => tag.startsWith("tab"));
@@ -21,36 +51,37 @@ function parseMeta(nodeMeta) {
   return { span: 1, ...JSON.parse(tabMeta) };
 }
 
-function formatTabs(tabNodes, { groupId, labels, sync }) {
-  function formatTabItem(nodes, meta) {
+function createTabs(tabNodes, { groupId, labels, sync }) {
+  const attributes = [];
+
+  if (sync) {
+    attributes.push({
+      name: "groupId",
+      type: "mdxJsxAttribute",
+      value: groupId,
+    });
+  }
+
+  const children = tabNodes.map(([nodes, meta]) => {
     const lang = nodes[0].lang;
     const label = meta.label ?? labels.get(lang);
     const value = meta.label?.toLowerCase() ?? lang;
 
-    return [
-      {
-        type: "jsx",
-        value: `<TabItem value="${value}"${label ? ` label="${label}"` : ""}>`,
-      },
-      ...nodes,
-      {
-        type: "jsx",
-        value: "</TabItem>",
-      },
-    ];
-  }
+    const attributes = [{ name: "value", type: "mdxJsxAttribute", value }];
 
-  return [
-    {
-      type: "jsx",
-      value: `<Tabs${sync ? ` groupId="${groupId}"` : ""}>`,
-    },
-    ...tabNodes.map(([nodes, meta]) => formatTabItem(nodes, meta)),
-    {
-      type: "jsx",
-      value: "</Tabs>",
-    },
-  ].flat();
+    if (label != null) {
+      attributes.push({ name: "label", type: "mdxJsxAttribute", value: label });
+    }
+
+    return {
+      attributes,
+      children: nodes,
+      name: "TabItem",
+      type: "mdxJsxFlowElement",
+    };
+  });
+
+  return { attributes, children, name: "Tabs", type: "mdxJsxFlowElement" };
 }
 
 function collectTabNodes(parent, index) {
@@ -104,8 +135,8 @@ function plugin(options = {}) {
     let hasTabs = false;
     let includesImportTabs = false;
 
-    visit(tree, ["code", "import"], (node, index, parent) => {
-      if (is(node, "import") && node.value.includes("@theme/Tabs")) {
+    visit(tree, ["code", "mdxjsEsm"], (node, index, parent) => {
+      if (is(node, "mdxjsEsm") && node.value.includes("@theme/Tabs")) {
         includesImportTabs = true;
 
         return;
@@ -115,16 +146,14 @@ function plugin(options = {}) {
       if (!tabNodes) return;
 
       hasTabs = true;
-      const tabs = formatTabs(tabNodes, config);
+      const tabs = createTabs(tabNodes, config);
       const replacedCount = tabNodes.map(([nodes]) => nodes).flat().length;
 
-      parent.children.splice(index, replacedCount, ...tabs);
-
-      return index + tabs.length;
+      parent.children.splice(index, replacedCount, tabs);
     });
 
     if (hasTabs && !includesImportTabs) {
-      tree.children.unshift(...importNodes);
+      tree.children.unshift(importNodes);
     }
   };
 }

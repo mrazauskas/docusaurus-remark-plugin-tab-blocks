@@ -1,12 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
-import remark from "remark";
+import { remark } from "remark";
 import remarkMdx from "remark-mdx";
 import { plugin as tabBlocksPlugin } from "../plugin";
 
 async function processFixture(fixture, options) {
-  const filePath = path.join(__dirname, "__fixtures__", `${fixture}.md`);
-  const file = fs.readFileSync(filePath);
+  const fileURL = new URL(
+    path.join("__fixtures__", `${fixture}.md`),
+    import.meta.url
+  );
+  const file = fs.readFileSync(fileURL);
 
   const result = await remark()
     .use(remarkMdx)
