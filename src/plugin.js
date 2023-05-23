@@ -147,7 +147,11 @@ function plugin(options = {}) {
 
       hasTabs = true;
       const tabs = createTabs(tabNodes, config);
-      const replacedCount = tabNodes.map(([nodes]) => nodes).flat().length;
+
+      const replacedCount = tabNodes.reduce(
+        (nodesCount, [nodes]) => nodesCount + nodes.length,
+        0
+      );
 
       parent.children.splice(index, replacedCount, tabs);
     });
