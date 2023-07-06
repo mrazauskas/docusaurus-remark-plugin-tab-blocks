@@ -7,7 +7,7 @@ import { plugin as tabBlocksPlugin } from "../plugin";
 async function processFixture(fixture, options) {
   const fileURL = new URL(
     path.join("__fixtures__", `${fixture}.md`),
-    import.meta.url
+    import.meta.url,
   );
   const file = fs.readFileSync(fileURL);
 
