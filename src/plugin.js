@@ -150,7 +150,7 @@ function plugin(options = {}) {
 
       const replacedCount = tabNodes.reduce(
         (nodesCount, [nodes]) => nodesCount + nodes.length,
-        0
+        0,
       );
 
       parent.children.splice(index, replacedCount, tabs);
