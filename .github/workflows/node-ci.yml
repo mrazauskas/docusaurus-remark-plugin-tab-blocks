@@ -2,9 +2,12 @@ name: node-ci
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - renovate/**
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   prepare-yarn-cache:
