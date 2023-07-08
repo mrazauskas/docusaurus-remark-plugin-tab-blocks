@@ -1,7 +1,7 @@
 {
   "extends": [
-    "config:base",
-    "schedule:daily",
+    "config:best-practices",
+    ":automergeBranch",
     ":automergeMinor",
     ":maintainLockFilesWeekly",
     ":semanticCommits"
