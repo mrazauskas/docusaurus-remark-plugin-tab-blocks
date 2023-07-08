@@ -34,7 +34,7 @@
   ],
   "dependencies": {
     "unist-util-is": "^4.0.0",
-    "unist-util-visit": "^2.0.0"
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "8.44.0",
