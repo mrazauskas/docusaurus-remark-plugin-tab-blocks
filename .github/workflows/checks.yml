@@ -1,4 +1,4 @@
-name: node-ci
+name: checks
 
 on:
   push:
