@@ -7,6 +7,8 @@
 
 Turn Docusaurus code blocks into tab blocks.
 
+---
+
 This Docusaurus plugin transforms markdown [code blocks](https://docusaurus.io/docs/next/markdown-features/code-blocks) into [tabs](https://docusaurus.io/docs/next/markdown-features/tabs). Just add the `tab` key to the language meta string:
 
     ```js tab
