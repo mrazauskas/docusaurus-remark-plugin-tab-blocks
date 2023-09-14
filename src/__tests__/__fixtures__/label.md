@@ -25,3 +25,15 @@ custom macOS label
 ```bash tab={"label":"Windows"}
 custom Windows label
 ```
+
+```json title="spec/config.json" tab={"label":"Chrome headless"}
+{ "failFast": true }
+```
+
+```json title="spec/config.json" tab={"label":"Chrome non-headless"}
+{ "failFast": true }
+```
+
+```json title="spec/config.json" tab={"label":"Firefox"}
+{ "failFast": true }
+```
