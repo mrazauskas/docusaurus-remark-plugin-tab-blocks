@@ -43,8 +43,10 @@ const importNodes = {
 };
 
 function parseMeta(nodeMeta) {
-  const tabTag = nodeMeta.split(" ").filter((tag) => tag.startsWith("tab"));
-  if (tabTag.length < 1) return null;
+  const tabTag = nodeMeta.match(/tab=?({.+})?/g);
+  if (tabTag == null || tabTag.length < 1) {
+    return null;
+  }
 
   const tabMeta = tabTag[0].split("=")[1] || "{}";
 
