@@ -43,14 +43,20 @@ const importNodes = {
 };
 
 function parseMeta(nodeMeta) {
-  const tabTag = nodeMeta.match(/tab=?({.+})?/g);
-  if (tabTag == null || tabTag.length < 1) {
+  const parsedMeta = { span: 1 };
+  const tabTag = nodeMeta.match(/tab(={.+})?/g);
+
+  if (tabTag == null) {
     return null;
   }
 
-  const tabMeta = tabTag[0].split("=")[1] || "{}";
+  const tabMeta = tabTag[0].split("=")[1];
 
-  return { span: 1, ...JSON.parse(tabMeta) };
+  if (tabMeta == null) {
+    return parsedMeta;
+  }
+
+  return { ...parsedMeta, ...JSON.parse(tabMeta) };
 }
 
 function createTabs(tabNodes, { groupId, labels, sync }) {
