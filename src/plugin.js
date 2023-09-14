@@ -73,7 +73,7 @@ function createTabs(tabNodes, { groupId, labels, sync }) {
   const children = tabNodes.map(([nodes, meta]) => {
     const lang = nodes[0].lang;
     const label = meta.label ?? labels.get(lang);
-    const value = meta.label?.toLowerCase() ?? lang;
+    const value = meta.label?.toLowerCase().replace(" ", "-") ?? lang;
 
     const attributes = [{ name: "value", type: "mdxJsxAttribute", value }];
 
