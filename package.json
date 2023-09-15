@@ -9,7 +9,7 @@
   },
   "main": "src/index.js",
   "engines": {
-    "node": ">=14"
+    "node": ">=16.14"
   },
   "scripts": {
     "lint": "yarn lint:eslint && yarn lint:prettier",
