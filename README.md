@@ -11,13 +11,15 @@ Turn Docusaurus code blocks into tab blocks.
 
 This Docusaurus plugin transforms markdown [code blocks](https://docusaurus.io/docs/next/markdown-features/code-blocks) into [tabs](https://docusaurus.io/docs/next/markdown-features/tabs). Just add the `tab` key to the language meta string:
 
-    ```js tab
-    console.log("Hello JavaScript tab!");
-    ```
+````md
+```js tab
+console.log("Hello JavaScript tab!");
+```
 
-    ```ts tab
-    console.log("Ahoy TypeScript tab!");
-    ```
+```ts tab
+console.log("Ahoy TypeScript tab!");
+```
+````
 
 And you have:
 
@@ -109,13 +111,15 @@ Each tab can be customized separately by assign a configuration object to the `t
 
 Sets custom tab label text.
 
-    ```bash tab={"label":"npm"}
-    npm install docusaurus-remark-plugin-tab-blocks
-    ```
+````md
+```bash tab={"label":"npm"}
+npm install docusaurus-remark-plugin-tab-blocks
+```
 
-    ```bash tab={"label":"yarn"}
-    yarn add docusaurus-remark-plugin-tab-blocks
-    ```
+```bash tab={"label":"yarn"}
+yarn add docusaurus-remark-plugin-tab-blocks
+```
+````
 
 #### `span`
 
@@ -123,29 +127,31 @@ Sets custom tab label text.
 
 Makes a single tab wrap two or more code blocks.
 
-    ```js tab={"span":2} title="SomeClass.js"
-    module.exports = class SomeClass {
-      method(a, b) {}
-    };
-    ```
+````md
+```js tab={"span":2} title="SomeClass.js"
+module.exports = class SomeClass {
+  method(a, b) {}
+};
+```
 
-    ```js title="SomeClass.test.js"
-    const SomeClass = require("./SomeClass");
+```js title="SomeClass.test.js"
+const SomeClass = require("./SomeClass");
 
-    // this and previous code blocks live in a single tab
-    ```
+// this and previous code blocks live in a single tab
+```
 
-    ```ts tab={"span":2} title="SomeClass.ts"
-    export class SomeClass {
-      method(a: string, b: string): void {}
-    }
-    ```
+```ts tab={"span":2} title="SomeClass.ts"
+export class SomeClass {
+  method(a: string, b: string): void {}
+}
+```
 
-    ```ts title="SomeClass.test.ts"
-    import { SomeClass } from "./SomeClass";
+```ts title="SomeClass.test.ts"
+import { SomeClass } from "./SomeClass";
 
-    // this and previous code blocks live in a single tab
-    ```
+// this and previous code blocks live in a single tab
+```
+````
 
 The example above will be rendered like this:
 
