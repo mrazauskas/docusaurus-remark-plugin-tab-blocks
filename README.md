@@ -1,11 +1,13 @@
 # docusaurus-remark-plugin-tab-blocks
 
-> Turn Docusaurus code blocks into tab blocks.
+[![version][version-src]][version-href]
+[![license][license-src]][license-href]
+[![checks][checks-src]][checks-href]
+[![coverage][coverage-src]][coverage-href]
 
-[![version](https://img.shields.io/npm/v/docusaurus-remark-plugin-tab-blocks)](https://npmjs.com/package/docusaurus-remark-plugin-tab-blocks)
-[![license](https://img.shields.io/github/license/mrazauskas/docusaurus-remark-plugin-tab-blocks)](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/LICENSE.md)
-[![node-ci](https://img.shields.io/github/actions/workflow/status/mrazauskas/docusaurus-remark-plugin-tab-blocks/node-ci.yml?label=CI)](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/actions/workflows/node-ci.yml)
-[![coverage](https://img.shields.io/codecov/c/github/mrazauskas/docusaurus-remark-plugin-tab-blocks/main)](https://app.codecov.io/gh/mrazauskas/docusaurus-remark-plugin-tab-blocks)
+Turn Docusaurus code blocks into tab blocks.
+
+---
 
 This Docusaurus plugin transforms markdown [code blocks](https://docusaurus.io/docs/next/markdown-features/code-blocks) into [tabs](https://docusaurus.io/docs/next/markdown-features/tabs). Just add the `tab` key to the language meta string:
 
@@ -21,7 +23,7 @@ And you have:
 
 <img src="https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/.github/readme/quick-example.gif" width="640" />
 
-> **Note** A Docusaurus theme with the `Tabs` and `TabItems` components is required.
+**Note:** A Docusaurus theme with the `Tabs` and `TabItems` components is required.
 
 ## Install
 
@@ -30,6 +32,8 @@ npm install docusaurus-remark-plugin-tab-blocks
 # or
 yarn add docusaurus-remark-plugin-tab-blocks
 ```
+
+**Note:** To use the plugin with the latest [canary releases](https://docusaurus.io/community/canary) of Docusaurus, install `docusaurus-remark-plugin-tab-blocks@next`.
 
 ## Usage
 
@@ -149,4 +153,13 @@ The example above will be rendered like this:
 
 ## License
 
-[MIT](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/LICENSE.md)
+[MIT][license-href]
+
+[version-src]: https://badgen.net/npm/v/docusaurus-remark-plugin-tab-blocks
+[version-href]: https://npmjs.com/package/docusaurus-remark-plugin-tab-blocks
+[license-src]: https://badgen.net/github/license/mrazauskas/docusaurus-remark-plugin-tab-blocks
+[license-href]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/LICENSE.md
+[checks-src]: https://badgen.net/github/checks/mrazauskas/docusaurus-remark-plugin-tab-blocks
+[checks-href]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/actions/workflows/checks.yml
+[coverage-src]: https://badgen.net/codecov/c/github/mrazauskas/docusaurus-remark-plugin-tab-blocks
+[coverage-href]: https://app.codecov.io/gh/mrazauskas/docusaurus-remark-plugin-tab-blocks
