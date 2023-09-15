@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.1] - 2023-09-15
+
+### Fixed
+
+- Handle spaces in custom tab `label` text ([#195](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/pull/195))
+
 ## [1.3.0] - 2023-02-25
 
 ### Added
