@@ -13,19 +13,27 @@ const importNodes = [
 ];
 
 function parseMeta(nodeMeta) {
-  const tabTag = nodeMeta.split(" ").filter((tag) => tag.startsWith("tab"));
-  if (tabTag.length < 1) return null;
+  const parsedMeta = { span: 1 };
+  const tabTag = nodeMeta.match(/tab(={.+})?/g);
 
-  const tabMeta = tabTag[0].split("=")[1] || "{}";
+  if (tabTag == null) {
+    return null;
+  }
 
-  return { span: 1, ...JSON.parse(tabMeta) };
+  const tabMeta = tabTag[0].split("=")[1];
+
+  if (tabMeta == null) {
+    return parsedMeta;
+  }
+
+  return { ...parsedMeta, ...JSON.parse(tabMeta) };
 }
 
 function formatTabs(tabNodes, { groupId, labels, sync }) {
   function formatTabItem(nodes, meta) {
     const lang = nodes[0].lang;
     const label = meta.label ?? labels.get(lang);
-    const value = meta.label?.toLowerCase() ?? lang;
+    const value = meta.label?.toLowerCase().replace(" ", "-") ?? lang;
 
     return [
       {
