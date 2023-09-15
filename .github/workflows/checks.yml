@@ -1,10 +1,10 @@
-name: node-ci
+name: checks
 
 on:
   push:
-    branches: [main]
+    branches: [v1]
   pull_request:
-    branches: [main]
+    branches: [v1]
 
 jobs:
   prepare-yarn-cache:
