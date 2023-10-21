@@ -119,7 +119,9 @@ function collectTabNodes(parent, index) {
     }
   } while (nodeIndex <= parent.children.length);
 
-  if (tabNodes.length <= 1) return null;
+  if (tabNodes.length === 0) {
+    return null;
+  }
 
   return tabNodes;
 }
@@ -151,7 +153,9 @@ export function plugin(options = {}) {
       }
 
       const tabNodes = collectTabNodes(parent, index);
-      if (!tabNodes) return;
+      if (tabNodes == null) {
+        return;
+      }
 
       hasTabs = true;
       const tabs = createTabs(tabNodes, config);
