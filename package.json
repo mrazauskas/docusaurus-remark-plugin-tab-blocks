@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "lint": "yarn lint:eslint && yarn lint:prettier",
-    "lint:eslint": "eslint . --ext js,mjs",
+    "lint:eslint": "eslint . --ext js",
     "lint:prettier": "prettier . --no-config --write",
     "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest"
   },
