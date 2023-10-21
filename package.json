@@ -19,6 +19,7 @@
     "url": "https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks.git"
   },
   "license": "MIT",
+  "type": "module",
   "main": "src/index.js",
   "files": [
     "src/*.js"
@@ -30,8 +31,8 @@
     "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest"
   },
   "dependencies": {
-    "unist-util-is": "^4.0.0",
-    "unist-util-visit": "^2.0.0"
+    "unist-util-is": "^6.0.0",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "8.52.0",

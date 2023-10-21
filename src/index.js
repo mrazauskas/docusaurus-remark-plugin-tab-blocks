@@ -1,3 +1,3 @@
-const { plugin } = require("./plugin");
+import { plugin } from "./plugin";
 
-module.exports = plugin;
+export default plugin;

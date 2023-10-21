@@ -1,5 +1,5 @@
-const visit = require("unist-util-visit");
-const is = require("unist-util-is");
+import { is } from "unist-util-is";
+import { visit } from "unist-util-visit";
 
 const importNodes = {
   data: {
@@ -136,7 +136,7 @@ function resolveConfig(options) {
   };
 }
 
-function plugin(options = {}) {
+export function plugin(options = {}) {
   const config = resolveConfig(options);
 
   return function transformer(tree) {
@@ -169,5 +169,3 @@ function plugin(options = {}) {
     }
   };
 }
-
-module.exports = { plugin };
