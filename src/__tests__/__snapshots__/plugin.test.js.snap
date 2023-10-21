@@ -288,17 +288,34 @@ Instead of including \`jest.useFakeTimers()\` in each test file, you can enable 
     \`\`\`
   </TabItem>
 </Tabs>
+
+A single item tab group also works:
+
+<Tabs groupId="code-examples">
+  <TabItem value="js" label="JavaScript">
+    \`\`\`js tab
+    console.log("Why not?");
+    \`\`\`
+  </TabItem>
+</Tabs>
 "
 `;
 
 exports[`tab blocks plugin ignores incomplete spans 1`] = `
-"\`\`\`js tab={"span":2}
-console.log("this is first a codeblock");
-\`\`\`
+"import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-\`\`\`js
-console.log("this is second a codeblock");
-\`\`\`
+<Tabs groupId="code-examples">
+  <TabItem value="js" label="JavaScript">
+    \`\`\`js tab={"span":2}
+    console.log("this is first a codeblock");
+    \`\`\`
+
+    \`\`\`js
+    console.log("this is second a codeblock");
+    \`\`\`
+  </TabItem>
+</Tabs>
 
 \`\`\`js tab={"span":3}
 console.log("this is first a codeblock");

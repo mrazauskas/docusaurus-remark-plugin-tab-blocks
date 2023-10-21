@@ -144,3 +144,9 @@ some.method("a", "b");
 
 console.log("Calls to method: ", mockMethod.mock.calls);
 ```
+
+A single item tab group also works:
+
+```js tab
+console.log("Why not?");
+```
