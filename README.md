@@ -35,25 +35,25 @@ npm install docusaurus-remark-plugin-tab-blocks
 yarn add docusaurus-remark-plugin-tab-blocks
 ```
 
-**Note:** To use the plugin with the latest [canary releases](https://docusaurus.io/community/canary) of Docusaurus, install `docusaurus-remark-plugin-tab-blocks@next`.
-
 ## Usage
 
 Add the plugin to the `remarkPlugins` list of your [Docusaurus configuration](https://docusaurus.io/docs/configuration):
 
 ```js
-module.exports = {
+import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
+
+export default {
   presets: [
     [
       "@docusaurus/preset-classic",
       {
         blog: {
-          remarkPlugins: [require("docusaurus-remark-plugin-tab-blocks")],
+          remarkPlugins: [tabBlocks],
         },
         docs: {
           remarkPlugins: [
             [
-              require("docusaurus-remark-plugin-tab-blocks"),
+              tabBlocks,
               // optional plugin configuration
               {
                 labels: [
@@ -66,7 +66,7 @@ module.exports = {
           ],
         },
         pages: {
-          remarkPlugins: [require("docusaurus-remark-plugin-tab-blocks")],
+          remarkPlugins: [tabBlocks],
         },
       },
     ],
