@@ -93,12 +93,10 @@ function createTabs(tabNodes, { groupId, labels, sync }) {
 }
 
 function collectTabNodes(parent, index) {
-  let nodeIndex = index;
+  let node = parent.children[index];
   const tabNodes = [];
 
   do {
-    const node = parent.children[nodeIndex];
-
     if (is(node, "code") && typeof node.meta === "string") {
       const meta = parseMeta(node.meta);
 
@@ -106,21 +104,20 @@ function collectTabNodes(parent, index) {
         break;
       }
 
-      const nodes = parent.children.slice(nodeIndex, nodeIndex + meta.span);
+      const spanItems = [];
 
-      if (
-        nodes.length === meta.span &&
-        nodes.every((node) => is(node, "code"))
-      ) {
-        tabNodes.push([nodes, meta]);
-        nodeIndex += meta.span;
-      } else {
-        break;
+      while (spanItems.length < meta.span && is(node, "code")) {
+        spanItems.push(node);
+
+        index++;
+        node = parent.children[index];
       }
+
+      tabNodes.push([spanItems, meta]);
     } else {
       break;
     }
-  } while (nodeIndex <= parent.children.length);
+  } while (index <= parent.children.length);
 
   if (tabNodes.length === 0) {
     return null;
