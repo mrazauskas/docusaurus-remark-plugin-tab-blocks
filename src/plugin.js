@@ -101,7 +101,9 @@ function collectTabNodes(parent, index) {
 
     if (is(node, "code") && typeof node.meta === "string") {
       const meta = parseMeta(node.meta);
-      if (!meta) break;
+      if (!meta) {
+        break;
+      }
 
       const nodes = parent.children.slice(nodeIndex, nodeIndex + meta.span);
 

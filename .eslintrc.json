@@ -11,6 +11,7 @@
   },
   "plugins": ["jest"],
   "rules": {
+    "curly": "error",
     "no-implicit-coercion": "error",
     "no-negated-condition": "error",
     "no-nested-ternary": "error",
