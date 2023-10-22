@@ -101,7 +101,8 @@ function collectTabNodes(parent, index) {
 
     if (is(node, "code") && typeof node.meta === "string") {
       const meta = parseMeta(node.meta);
-      if (!meta) {
+
+      if (meta == null) {
         break;
       }
 
@@ -155,11 +156,13 @@ export function plugin(options = {}) {
       }
 
       const tabNodes = collectTabNodes(parent, index);
+
       if (tabNodes == null) {
         return;
       }
 
       hasTabs = true;
+
       const tabs = createTabs(tabNodes, config);
 
       const replacedCount = tabNodes.reduce(
