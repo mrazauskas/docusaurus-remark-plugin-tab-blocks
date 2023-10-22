@@ -29,10 +29,18 @@ And you have:
 
 ## Install
 
+Use your favorite package manager to add `docusaurus-remark-plugin-tab-blocks` to a project:
+
 ```bash
 npm install docusaurus-remark-plugin-tab-blocks
-# or
+```
+
+```bash
 yarn add docusaurus-remark-plugin-tab-blocks
+```
+
+```bash
+pnpm add docusaurus-remark-plugin-tab-blocks
 ```
 
 ## Usage
