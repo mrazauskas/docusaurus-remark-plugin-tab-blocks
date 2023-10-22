@@ -317,19 +317,31 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-\`\`\`js tab={"span":3}
-console.log("this is first a codeblock");
-\`\`\`
-
 \`\`\`js
-console.log("this is second a codeblock");
+console.log("and one more codeblock");
 \`\`\`
 
-Third codeblock went missing.
+<Tabs groupId="code-examples">
+  <TabItem value="js" label="JavaScript">
+    \`\`\`js tab={"span":3}
+    console.log("this is first a codeblock");
+    \`\`\`
 
-\`\`\`ts tab={"span":2}
-console.log("this is a code ");
-\`\`\`
+    \`\`\`js
+    console.log("this is second a codeblock");
+    \`\`\`
+  </TabItem>
+</Tabs>
+
+Third codeblock went missing. That can happen during development.
+
+<Tabs groupId="code-examples">
+  <TabItem value="ts" label="TypeScript">
+    \`\`\`ts tab={"span":2}
+    console.log("this is a code ");
+    \`\`\`
+  </TabItem>
+</Tabs>
 "
 `;
 
