@@ -85,7 +85,7 @@ jobs:
           cache: yarn
       - run: yarn install
       - run: yarn test --coverage
-      - uses: codecov/codecov-action@c4cf8a4f03f0ac8585acb7c1b7ce3460ec15782f # v4
+      - uses: codecov/codecov-action@v3
         with:
           directory: "./coverage"
           token: ${{ secrets.CODECOV_TOKEN }}
