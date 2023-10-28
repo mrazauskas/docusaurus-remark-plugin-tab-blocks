@@ -43,7 +43,7 @@
     "remark": "15.0.1",
     "remark-mdx": "3.0.0"
   },
-  "packageManager": "yarn@4.0.0",
+  "packageManager": "yarn@4.0.1",
   "engines": {
     "node": ">=18.0"
   }
