@@ -33,7 +33,7 @@ And you have:
 Use your favorite package manager to add `docusaurus-remark-plugin-tab-blocks` to a project:
 
 ```bash
-npm install docusaurus-remark-plugin-tab-blocks
+npm add docusaurus-remark-plugin-tab-blocks
 ```
 
 ```bash
