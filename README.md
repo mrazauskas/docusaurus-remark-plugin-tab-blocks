@@ -44,6 +44,9 @@ yarn add docusaurus-remark-plugin-tab-blocks
 pnpm add docusaurus-remark-plugin-tab-blocks
 ```
 
+> [!NOTE]
+> Current version of the plugin only works with Docusaurus 3. For Docusaurus 2, you should install `docusaurus-remark-plugin-tab-blocks@1.3.1`.
+
 ## Usage
 
 Add the plugin to the `remarkPlugins` list of your [Docusaurus configuration](https://docusaurus.io/docs/configuration):
