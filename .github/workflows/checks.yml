@@ -23,6 +23,18 @@ jobs:
       - run: yarn lint:eslint
       - run: yarn lint:prettier --no-write --check
 
+  test-types:
+    name: Test Types
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4
+        with:
+          node-version: lts/*
+      - run: corepack enable
+      - run: yarn install
+      - run: yarn test:types
+
   test-node:
     name: Test on Node.js v${{ matrix.node-version }}
     strategy:
