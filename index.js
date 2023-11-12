@@ -138,7 +138,7 @@ function resolveConfig(options) {
   };
 }
 
-export function plugin(options = {}) {
+function plugin(options = {}) {
   const config = resolveConfig(options);
 
   return function transformer(tree) {
@@ -175,3 +175,5 @@ export function plugin(options = {}) {
     }
   };
 }
+
+export default plugin;

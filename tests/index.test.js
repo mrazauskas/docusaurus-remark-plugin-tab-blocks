@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { remark } from "remark";
 import remarkMdx from "remark-mdx";
-import { plugin as tabBlocksPlugin } from "../plugin";
+import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
 
 async function processFixture(fixture, options) {
   const fileURL = new URL(
@@ -13,7 +13,7 @@ async function processFixture(fixture, options) {
 
   const result = await remark()
     .use(remarkMdx)
-    .use(tabBlocksPlugin, options)
+    .use(tabBlocks, options)
     .process(file);
 
   return result.toString();
