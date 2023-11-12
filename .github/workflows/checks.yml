@@ -33,7 +33,7 @@ jobs:
           node-version: lts/*
       - run: corepack enable
       - run: yarn install
-      - run: yarn test:types
+      - run: yarn test:types --target 4.8,5.0,latest
 
   test-node:
     name: Test on Node.js v${{ matrix.node-version }}
