@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.0] - 2023-11-13
+
+### Added
+
+- Add type definitions file ([#212](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/pull/212))
+
 ## [2.0.0] - 2023-10-31
 
 ### Changed
@@ -45,6 +51,7 @@
 
 _First release._
 
+[3.0.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v3.0.0
 [2.0.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v2.0.0
 [1.3.1]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v1.3.1
 [1.3.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v1.3.0
