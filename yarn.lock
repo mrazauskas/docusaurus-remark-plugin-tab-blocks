@@ -1769,7 +1769,7 @@ __metadata:
     prettier: "npm:3.1.0"
     remark: "npm:15.0.1"
     remark-mdx: "npm:3.0.0"
-    tstyche: "npm:1.0.0-beta.4"
+    tstyche: "npm:1.0.0-beta.5"
     typescript: "npm:5.3.2"
     unist-util-is: "npm:^6.0.0"
     unist-util-visit: "npm:^5.0.0"
@@ -4814,9 +4814,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tstyche@npm:1.0.0-beta.4":
-  version: 1.0.0-beta.4
-  resolution: "tstyche@npm:1.0.0-beta.4"
+"tstyche@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "tstyche@npm:1.0.0-beta.5"
   peerDependencies:
     typescript: 4.x || 5.x
   peerDependenciesMeta:
@@ -4824,7 +4824,7 @@ __metadata:
       optional: true
   bin:
     tstyche: ./build/bin.js
-  checksum: b59a8dccce10725b9b4a125346d08f78622b9e2e8700fbed1589cc70f780ccd4b33fbe485c6e6a972eef41292bcf05bff64067d3b15d0849da99cb2def570609
+  checksum: 73609632041b9bde3489fb00f40b7c4eed04274941221419787ac54ae93ad14364b1f243d59252876fd7634cff18e6dd2679c91f26d5bbec33e39a23010b204f
   languageName: node
   linkType: hard
 
