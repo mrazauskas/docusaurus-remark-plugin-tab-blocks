@@ -81,8 +81,8 @@ jobs:
           node-version: lts/*
       - run: corepack enable
       - run: yarn install
-      - run: yarn test --coverage
+      - run: yarn test:coverage
       - uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3
         with:
-          directory: "./coverage"
-          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage
+          files: lcov.info

@@ -1,93 +1,139 @@
-import fs from "node:fs";
-import path from "node:path";
+import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
+import fs from "node:fs/promises";
+import path, { dirname } from "node:path";
+import { test } from "node:test";
+import { fileURLToPath } from "node:url";
 import { remark } from "remark";
 import remarkMdx from "remark-mdx";
 import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
 
-async function processFixture(fixture, options) {
-  const fileURL = new URL(
-    path.join("__fixtures__", `${fixture}.md`),
+function getFixtureFileURL(fixtureName) {
+  return new URL(
+    path.join("__fixtures__", `${fixtureName}.md`),
     import.meta.url,
   );
-  const file = fs.readFileSync(fileURL);
+}
+
+function getSnapshotFileURL(fixtureName) {
+  return new URL(
+    path.join("__snapshots__", `${fixtureName}.snap.md`),
+    import.meta.url,
+  );
+}
+
+async function matchFile(sourceContent, fixtureName) {
+  const fileURL = getSnapshotFileURL(fixtureName);
+
+  if (existsSync(fileURL)) {
+    const fileContent = (await fs.readFile(fileURL)).toString();
+
+    assert.equal(
+      sourceContent.replaceAll("\r\n", "\n"),
+      fileContent.replaceAll("\r\n", "\n"),
+    );
+  } else {
+    if (process.env.CI) {
+      throw new Error("Snapshots cannot be created in CI environment.");
+    }
+
+    fs.mkdir(dirname(fileURLToPath(fileURL)), { recursive: true });
+    fs.writeFile(fileURL, sourceContent);
+  }
+}
+
+async function processFixture(fixtureName, options) {
+  const fileURL = getFixtureFileURL(fixtureName);
+  const fileContent = await fs.readFile(fileURL);
 
   const result = await remark()
     .use(remarkMdx)
     .use(tabBlocks, options)
-    .process(file);
+    .process(fileContent);
 
   return result.toString();
 }
 
-describe("tab blocks plugin", () => {
-  test("base example", async () => {
-    const result = await processFixture("base");
+test("base example", async () => {
+  const fixtureName = "base";
+  const result = await processFixture(fixtureName);
 
-    expect(result).toMatchSnapshot();
+  await matchFile(result, fixtureName);
+});
+
+test("full example", async () => {
+  const fixtureName = "full-example";
+  const result = await processFixture(fixtureName);
+
+  await matchFile(result, fixtureName);
+});
+
+test("can be nested inside an admonition", async () => {
+  const fixtureName = "inside-admonition";
+  const result = await processFixture(fixtureName);
+
+  await matchFile(result, fixtureName);
+});
+
+test("respects title meta", async () => {
+  const fixtureName = "title";
+  const result = await processFixture(fixtureName);
+
+  await matchFile(result, fixtureName);
+});
+
+test("supports 'labels' option", async () => {
+  const fixtureName = "label";
+  const result = await processFixture(fixtureName, {
+    labels: [
+      ["js", "javascript"],
+      ["py", "Python"],
+    ],
   });
 
-  test("full example", async () => {
-    const result = await processFixture("full-example");
+  await matchFile(result, fixtureName);
+});
 
-    expect(result).toMatchSnapshot();
+test("supports 'groupId' option", async () => {
+  const fixtureName = "group-id";
+  const result = await processFixture(fixtureName, {
+    groupId: "some-test-group",
   });
 
-  test("can be nested inside an admonition", async () => {
-    const result = await processFixture("inside-admonition");
+  await matchFile(result, fixtureName);
+});
 
-    expect(result).toMatchSnapshot();
-  });
+test("supports 'span' meta", async () => {
+  const fixtureName = "span";
+  const result = await processFixture(fixtureName);
 
-  test("respects title meta", async () => {
-    const result = await processFixture("title");
+  await matchFile(result, fixtureName);
+});
 
-    expect(result).toMatchSnapshot();
-  });
+test("supports incomplete spans", async () => {
+  const fixtureName = "span-incomplete";
+  const result = await processFixture(fixtureName);
 
-  test("supports `labels` option", async () => {
-    const result = await processFixture("label", {
-      labels: [
-        ["js", "javascript"],
-        ["py", "Python"],
-      ],
-    });
+  await matchFile(result, fixtureName);
+});
 
-    expect(result).toMatchSnapshot();
-  });
+test("supports 'sync' option", async () => {
+  const fixtureName = "sync";
+  const result = await processFixture(fixtureName, { sync: false });
 
-  test("supports `groupId` option", async () => {
-    const result = await processFixture("base", { groupId: "some-test-group" });
+  await matchFile(result, fixtureName);
+});
 
-    expect(result).toMatchSnapshot();
-  });
+test("does not re-import tabs components when already imported above", async () => {
+  const fixtureName = "import-tabs-above";
+  const result = await processFixture(fixtureName);
 
-  test("supports `span` meta", async () => {
-    const result = await processFixture("span");
+  await matchFile(result, fixtureName);
+});
 
-    expect(result).toMatchSnapshot();
-  });
+test("does not re-import tabs components when already imported below", async () => {
+  const fixtureName = "import-tabs-below";
+  const result = await processFixture(fixtureName);
 
-  test("supports `sync` option", async () => {
-    const result = await processFixture("base", { sync: false });
-
-    expect(result).toMatchSnapshot();
-  });
-
-  test("ignores incomplete spans", async () => {
-    const result = await processFixture("span-incomplete");
-
-    expect(result).toMatchSnapshot();
-  });
-
-  test("does not re-import tabs components when already imported above", async () => {
-    const result = await processFixture("import-tabs-above");
-
-    expect(result).toMatchSnapshot();
-  });
-
-  test("does not re-import tabs components when already imported below", async () => {
-    const result = await processFixture("import-tabs-below");
-
-    expect(result).toMatchSnapshot();
-  });
+  await matchFile(result, fixtureName);
 });

@@ -1,0 +1,12 @@
+{
+  "all": true,
+  "exclude": [
+    ".yarn/**/*",
+    "coverage/**/*",
+    "tests/**/*",
+    "typetests/**/*",
+    "**/*.d.ts"
+  ],
+  "reporter": ["lcov", "text"],
+  "tempDirectory": "./coverage/temp"
+}
