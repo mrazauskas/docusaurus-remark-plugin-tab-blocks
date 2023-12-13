@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import fs from "node:fs/promises";
-import path, { dirname } from "node:path";
+import path from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import { remark } from "remark";
@@ -47,7 +47,7 @@ async function matchFile(source, fixtureName) {
       throw new Error("Snapshots cannot be created in CI environment.");
     }
 
-    fs.mkdir(dirname(fileURLToPath(fileURL)), { recursive: true });
+    fs.mkdir(path.dirname(fileURLToPath(fileURL)), { recursive: true });
     fs.writeFile(fileURL, source);
   }
 }
