@@ -1,5 +1,4 @@
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="code-examples">
