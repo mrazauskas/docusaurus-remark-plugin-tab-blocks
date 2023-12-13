@@ -8,6 +8,9 @@ import { remark } from "remark";
 import remarkMdx from "remark-mdx";
 import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
 
+/**
+ * @param {string} fixtureName
+ */
 function getFixtureFileURL(fixtureName) {
   return new URL(
     path.join("__fixtures__", `${fixtureName}.md`),
@@ -15,6 +18,9 @@ function getFixtureFileURL(fixtureName) {
   );
 }
 
+/**
+ * @param {string} fixtureName
+ */
 function getSnapshotFileURL(fixtureName) {
   return new URL(
     path.join("__snapshots__", `${fixtureName}.snap.md`),
@@ -22,26 +28,34 @@ function getSnapshotFileURL(fixtureName) {
   );
 }
 
-async function matchFile(sourceContent, fixtureName) {
+/**
+ * @param {string} source
+ * @param {string} fixtureName
+ */
+async function matchFile(source, fixtureName) {
   const fileURL = getSnapshotFileURL(fixtureName);
 
   if (existsSync(fileURL)) {
-    const fileContent = (await fs.readFile(fileURL)).toString();
+    const target = (await fs.readFile(fileURL)).toString();
 
     assert.equal(
-      sourceContent.replaceAll("\r\n", "\n"),
-      fileContent.replaceAll("\r\n", "\n"),
+      source.replaceAll("\r\n", "\n"),
+      target.replaceAll("\r\n", "\n"),
     );
   } else {
-    if (process.env.CI) {
+    if (process.env["CI"]) {
       throw new Error("Snapshots cannot be created in CI environment.");
     }
 
     fs.mkdir(dirname(fileURLToPath(fileURL)), { recursive: true });
-    fs.writeFile(fileURL, sourceContent);
+    fs.writeFile(fileURL, source);
   }
 }
 
+/**
+ * @param {string} fixtureName
+ * @param {import("docusaurus-remark-plugin-tab-blocks").Options} [options]
+ */
 async function processFixture(fixtureName, options) {
   const fileURL = getFixtureFileURL(fixtureName);
   const fileContent = await fs.readFile(fileURL);
