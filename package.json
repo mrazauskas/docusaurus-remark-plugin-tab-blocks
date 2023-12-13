@@ -30,7 +30,8 @@
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint . --ext js",
     "lint:prettier": "prettier . --no-config --write",
-    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
+    "test": "node --test",
+    "test:coverage": "c8 --config c8.config.json yarn test",
     "test:types": "tstyche"
   },
   "dependencies": {
@@ -38,10 +39,10 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "c8": "8.0.1",
     "eslint": "8.55.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-jest": "27.6.0",
-    "jest": "29.7.0",
     "prettier": "3.1.1",
     "remark": "15.0.1",
     "remark-mdx": "3.0.0",
