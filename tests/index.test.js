@@ -28,7 +28,7 @@ async function matchFile(sourceContent, fixtureName) {
   if (existsSync(fileURL)) {
     const fileContent = (await fs.readFile(fileURL)).toString();
 
-    assert.equal(sourceContent.replaceAll("\r\n", "\n"), fileContent);
+    assert.equal(sourceContent, fileContent.replaceAll("\r\n", "\n"));
   } else {
     if (process.env.CI) {
       throw new Error("Snapshots cannot be created in CI environment.");
