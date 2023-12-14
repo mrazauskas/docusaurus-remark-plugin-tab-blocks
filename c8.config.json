@@ -1,12 +1,6 @@
 {
   "all": true,
-  "exclude": [
-    ".yarn/**/*",
-    "coverage/**/*",
-    "tests/**/*",
-    "typetests/**/*",
-    "**/*.d.ts"
-  ],
+  "include": ["**/*.js"],
   "reporter": ["lcov", "text"],
   "tempDirectory": "./coverage/temp"
 }
