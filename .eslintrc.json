@@ -1,7 +1,6 @@
 {
   "env": {
     "es2021": true,
-    "jest/globals": true,
     "node": true
   },
   "extends": ["eslint:recommended", "prettier"],
@@ -9,7 +8,6 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["jest"],
   "rules": {
     "curly": "error",
     "no-implicit-coercion": "error",

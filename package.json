@@ -42,7 +42,6 @@
     "c8": "8.0.1",
     "eslint": "8.55.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-jest": "27.6.0",
     "prettier": "3.1.1",
     "remark": "15.0.1",
     "remark-mdx": "3.0.0",
