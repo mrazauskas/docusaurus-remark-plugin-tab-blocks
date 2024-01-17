@@ -28,7 +28,7 @@
   ],
   "scripts": {
     "lint": "yarn lint:eslint && yarn lint:prettier",
-    "lint:eslint": "eslint . --ext js",
+    "lint:eslint": "eslint . --config eslint.config.json --ext js",
     "lint:prettier": "prettier . --no-config --write",
     "test": "node --test",
     "test:coverage": "c8 --config c8.config.json yarn test",
