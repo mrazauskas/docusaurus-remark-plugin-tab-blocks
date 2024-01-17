@@ -6,11 +6,12 @@ on:
       - main
       - renovate/**
   pull_request:
-    branches-ignore:
-      - renovate/**
+    branches:
+      - main
 
 jobs:
   lint:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -24,6 +25,7 @@ jobs:
       - run: yarn lint:prettier --no-write --check
 
   test-types:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
     name: Test Types
     runs-on: ubuntu-latest
     steps:
@@ -36,6 +38,7 @@ jobs:
       - run: yarn test:types --target 4.8,5.0,current
 
   test-node:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
     name: Test on Node.js v${{ matrix.node-version }}
     strategy:
       fail-fast: false
@@ -54,6 +57,7 @@ jobs:
       - run: yarn test
 
   test-os:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
     name: Test on ${{ matrix.os }} using Node.js LTS
     strategy:
       fail-fast: false
@@ -71,6 +75,7 @@ jobs:
       - run: yarn test
 
   test-coverage:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
     name: Test on Ubuntu with coverage using Node.js LTS
     runs-on: ubuntu-latest
 
