@@ -1,0 +1,12 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.rulers": [80, 120],
+  "eslint.options": { "overrideConfigFile": "./eslint.config.json" },
+  "files.associations": {
+    "eslint.config.json": "jsonc"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
