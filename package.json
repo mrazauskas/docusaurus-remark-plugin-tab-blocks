@@ -27,8 +27,8 @@
     "index.js"
   ],
   "scripts": {
-    "check": "dprint check --config dprint.config.json",
-    "format": "dprint fmt --config dprint.config.json",
+    "check": "dprint check",
+    "format": "dprint fmt",
     "lint": "eslint . --config eslint.config.json --ext js",
     "test": "node --test",
     "test:coverage": "c8 --config c8.config.json yarn test",

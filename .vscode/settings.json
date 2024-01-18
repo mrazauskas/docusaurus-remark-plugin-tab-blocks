@@ -6,7 +6,8 @@
   "editor.rulers": [80, 120],
   "eslint.options": { "overrideConfigFile": "./eslint.config.json" },
   "files.associations": {
+    "dprint.json": "jsonc",
     "eslint.config.json": "jsonc"
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }
