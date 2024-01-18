@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "c8": "9.1.0",
-    "dprint": "^0.45.0",
+    "dprint": "0.45.0",
     "eslint": "8.56.0",
     "remark": "15.0.1",
     "remark-mdx": "3.0.0",

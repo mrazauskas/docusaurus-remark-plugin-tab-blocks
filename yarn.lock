@@ -540,7 +540,7 @@ __metadata:
   resolution: "docusaurus-remark-plugin-tab-blocks@workspace:."
   dependencies:
     c8: "npm:9.1.0"
-    dprint: "npm:^0.45.0"
+    dprint: "npm:0.45.0"
     eslint: "npm:8.56.0"
     remark: "npm:15.0.1"
     remark-mdx: "npm:3.0.0"
@@ -551,7 +551,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"dprint@npm:^0.45.0":
+"dprint@npm:0.45.0":
   version: 0.45.0
   resolution: "dprint@npm:0.45.0"
   dependencies:
