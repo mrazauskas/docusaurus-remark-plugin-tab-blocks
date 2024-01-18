@@ -1,7 +1,4 @@
----
-id: configuration
-title: Configuring Jest
----
+# Configuring Jest
 
 The configuration file should simply export an object:
 

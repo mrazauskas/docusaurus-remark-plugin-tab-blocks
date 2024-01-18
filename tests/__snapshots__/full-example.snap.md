@@ -1,11 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-***
-
-id: configuration
-title: Configuring Jest
------------------------
+# Configuring Jest
 
 The configuration file should simply export an object:
 

@@ -27,9 +27,9 @@
     "index.js"
   ],
   "scripts": {
-    "lint": "yarn lint:eslint && yarn lint:prettier",
-    "lint:eslint": "eslint . --config eslint.config.json --ext js",
-    "lint:prettier": "prettier . --no-config --write",
+    "check": "dprint check --config dprint.config.json",
+    "format": "dprint fmt --config dprint.config.json",
+    "lint": "eslint . --config eslint.config.json --ext js",
     "test": "node --test",
     "test:coverage": "c8 --config c8.config.json yarn test",
     "test:types": "tstyche"
@@ -40,8 +40,8 @@
   },
   "devDependencies": {
     "c8": "9.1.0",
+    "dprint": "^0.45.0",
     "eslint": "8.56.0",
-    "prettier": "3.2.4",
     "remark": "15.0.1",
     "remark-mdx": "3.0.0",
     "tstyche": "1.0.0-beta.9",

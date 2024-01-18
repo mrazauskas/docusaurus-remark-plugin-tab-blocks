@@ -38,8 +38,7 @@ const importNodes = {
     },
   },
   type: "mdxjsEsm",
-  value:
-    "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';",
+  value: "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';",
 };
 
 function parseMeta(nodeMeta) {
