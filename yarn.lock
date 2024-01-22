@@ -157,12 +157,12 @@ __metadata:
   linkType: hard
 
 "@jridgewell/trace-mapping@npm:^0.3.12":
-  version: 0.3.21
-  resolution: "@jridgewell/trace-mapping@npm:0.3.21"
+  version: 0.3.22
+  resolution: "@jridgewell/trace-mapping@npm:0.3.22"
   dependencies:
     "@jridgewell/resolve-uri": "npm:^3.1.0"
     "@jridgewell/sourcemap-codec": "npm:^1.4.14"
-  checksum: 4ae1c862ca0a12e1fb08ee48bb2fd65667a5258a97cc37a8708ff1e1d6a351e6a1166f2f806a9d9b9680f841da9fbde35fe6bd971eee3bdf1c10ea669ba5707a
+  checksum: 18cf19f88e2792c1c91515f2b629aae05f3cdbb2e60c3886e16e80725234ce26dd10144c4981c05d9366e7094498c0b4fe5c1a89f4a730d7376a4ba4af448149
   languageName: node
   linkType: hard
 
