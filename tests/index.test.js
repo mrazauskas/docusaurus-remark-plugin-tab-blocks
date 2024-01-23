@@ -1,8 +1,5 @@
 import { existsSync } from "node:fs";
 import fs from "node:fs/promises";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
 import { remark } from "remark";
 import remarkMdx from "remark-mdx";
 import { test } from "uvu";
@@ -11,34 +8,14 @@ import * as assert from "uvu/assert";
 import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
 
 /**
- * @param {string} fixtureName
- */
-function getFixtureFileURL(fixtureName) {
-  return new URL(
-    path.join("__fixtures__", `${fixtureName}.md`),
-    import.meta.url,
-  );
-}
-
-/**
- * @param {string} fixtureName
- */
-function getSnapshotFileURL(fixtureName) {
-  return new URL(
-    path.join("__snapshots__", `${fixtureName}.snap.md`),
-    import.meta.url,
-  );
-}
-
-/**
  * @param {string} source
  * @param {string} fixtureName
  */
 async function matchFile(source, fixtureName) {
-  const fileURL = getSnapshotFileURL(fixtureName);
+  const fileUrl = new URL(`__snapshots__/${fixtureName}.snap.md`, import.meta.url);
 
-  if (existsSync(fileURL)) {
-    const target = await fs.readFile(fileURL, { encoding: "utf8" });
+  if (existsSync(fileUrl)) {
+    const target = await fs.readFile(fileUrl, { encoding: "utf8" });
 
     assert.fixture(source, target);
   } else {
@@ -46,8 +23,8 @@ async function matchFile(source, fixtureName) {
       throw new Error("Snapshots cannot be created in CI environment.");
     }
 
-    fs.mkdir(path.dirname(fileURLToPath(fileURL)), { recursive: true });
-    fs.writeFile(fileURL, source);
+    fs.mkdir(new URL("__snapshots__", import.meta.url), { recursive: true });
+    fs.writeFile(fileUrl, source);
   }
 }
 
@@ -56,8 +33,8 @@ async function matchFile(source, fixtureName) {
  * @param {import("docusaurus-remark-plugin-tab-blocks").Options} [options]
  */
 async function processFixture(fixtureName, options) {
-  const fileURL = getFixtureFileURL(fixtureName);
-  const fileContent = await fs.readFile(fileURL);
+  const fileUrl = new URL(`__fixtures__/${fixtureName}.md`, import.meta.url);
+  const fileContent = await fs.readFile(fileUrl);
 
   const result = await remark()
     .use(remarkMdx)
