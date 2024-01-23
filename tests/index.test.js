@@ -1,11 +1,13 @@
-import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { test } from "node:test";
 import { fileURLToPath } from "node:url";
+
 import { remark } from "remark";
 import remarkMdx from "remark-mdx";
+import { test } from "uvu";
+import * as assert from "uvu/assert";
+
 import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
 
 /**
@@ -36,14 +38,11 @@ async function matchFile(source, fixtureName) {
   const fileURL = getSnapshotFileURL(fixtureName);
 
   if (existsSync(fileURL)) {
-    const target = (await fs.readFile(fileURL)).toString();
+    const target = await fs.readFile(fileURL, { encoding: "utf8" });
 
-    assert.equal(
-      source.replaceAll("\r\n", "\n"),
-      target.replaceAll("\r\n", "\n"),
-    );
+    assert.fixture(source, target);
   } else {
-    if (process.env["CI"]) {
+    if (process.env["CI"] != null) {
       throw new Error("Snapshots cannot be created in CI environment.");
     }
 
@@ -151,3 +150,5 @@ test("does not re-import tabs components when already imported below", async () 
 
   await matchFile(result, fixtureName);
 });
+
+test.run();
