@@ -47,7 +47,7 @@
     "tstyche": "1.0.0-rc",
     "uvu": "0.5.6"
   },
-  "packageManager": "yarn@4.0.2",
+  "packageManager": "yarn@4.1.0",
   "engines": {
     "node": ">=18.0"
   }
