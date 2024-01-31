@@ -91,3 +91,5 @@ jobs:
         with:
           directory: ./coverage
           files: lcov.info
+        env:
+          token: ${{ secrets.CODECOV_TOKEN }}
