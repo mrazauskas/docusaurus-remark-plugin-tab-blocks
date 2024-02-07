@@ -90,5 +90,5 @@ jobs:
       - uses: codecov/codecov-action@ab904c41d6ece82784817410c45d8b8c02684457 # v3
         with:
           directory: ./coverage
-          files: lcov.info
+          files: ./lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
