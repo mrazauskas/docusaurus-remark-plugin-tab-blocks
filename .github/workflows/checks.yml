@@ -76,7 +76,7 @@ jobs:
 
   test-coverage:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
-    name: Test on Ubuntu with coverage using Node.js LTS
+    name: Collect Test Coverage
     runs-on: ubuntu-latest
 
     steps:
