@@ -87,8 +87,7 @@ jobs:
       - run: corepack enable
       - run: yarn install
       - run: yarn test:coverage
-      - uses: codecov/codecov-action@ab904c41d6ece82784817410c45d8b8c02684457 # v3
+      - uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699 # v1
         with:
-          directory: ./coverage
-          files: ./lcov.info
-          token: ${{ secrets.CODECOV_TOKEN }}
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: ./coverage/lcov.info

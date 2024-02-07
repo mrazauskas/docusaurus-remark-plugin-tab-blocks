@@ -1,9 +1,9 @@
 # docusaurus-remark-plugin-tab-blocks
 
-[![version][version-src]][version-href]
-[![license][license-src]][license-href]
-[![checks][checks-src]][checks-href]
-[![coverage][coverage-src]][coverage-href]
+[![version][version-badge]][version-url]
+[![license][license-badge]][license-url]
+[![checks][checks-badge]][checks-url]
+[![coverage][coverage-badge]][coverage-url]
 
 Turn Docusaurus code blocks into tab blocks.
 
@@ -171,13 +171,13 @@ The example above will be rendered like this:
 
 ## License
 
-[MIT][license-href]
+[MIT][license-url]
 
-[version-src]: https://badgen.net/npm/v/docusaurus-remark-plugin-tab-blocks
-[version-href]: https://npmjs.com/package/docusaurus-remark-plugin-tab-blocks
-[license-src]: https://badgen.net/github/license/mrazauskas/docusaurus-remark-plugin-tab-blocks
-[license-href]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/LICENSE.md
-[checks-src]: https://badgen.net/github/checks/mrazauskas/docusaurus-remark-plugin-tab-blocks
-[checks-href]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/actions/workflows/checks.yml
-[coverage-src]: https://badgen.net/codecov/c/github/mrazauskas/docusaurus-remark-plugin-tab-blocks
-[coverage-href]: https://app.codecov.io/gh/mrazauskas/docusaurus-remark-plugin-tab-blocks
+[version-badge]: https://badgen.net/npm/v/docusaurus-remark-plugin-tab-blocks
+[version-url]: https://npmjs.com/package/docusaurus-remark-plugin-tab-blocks
+[license-badge]: https://badgen.net/github/license/mrazauskas/docusaurus-remark-plugin-tab-blocks
+[license-url]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/LICENSE.md
+[checks-badge]: https://badgen.net/github/checks/mrazauskas/docusaurus-remark-plugin-tab-blocks
+[checks-url]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/actions/workflows/checks.yml
+[coverage-badge]: https://badgen.net/codacy/coverage/8a373a32f9264faebc40b5ca292894bd
+[coverage-url]: https://app.codacy.com/gh/mrazauskas/docusaurus-remark-plugin-tab-blocks/coverage/dashboard
