@@ -551,7 +551,7 @@ __metadata:
     eslint: "npm:8.56.0"
     remark: "npm:15.0.1"
     remark-mdx: "npm:3.0.0"
-    tstyche: "npm:1.0.0-rc"
+    tstyche: "npm:1.0.0-rc.1"
     unist-util-is: "npm:^6.0.0"
     unist-util-visit: "npm:^5.0.0"
     uvu: "npm:0.5.6"
@@ -1929,9 +1929,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tstyche@npm:1.0.0-rc":
-  version: 1.0.0-rc
-  resolution: "tstyche@npm:1.0.0-rc"
+"tstyche@npm:1.0.0-rc.1":
+  version: 1.0.0-rc.1
+  resolution: "tstyche@npm:1.0.0-rc.1"
   peerDependencies:
     typescript: 4.x || 5.x
   peerDependenciesMeta:
@@ -1939,7 +1939,7 @@ __metadata:
       optional: true
   bin:
     tstyche: ./build/bin.js
-  checksum: 10c0/872d48d9f032c9c476b12f5206222477a90c54f2707f969495d33d80e85266d107272fe339ddf4a9f5bde7ee9138984e3baa6c21fa3ffb523132ffcbb43ad8a1
+  checksum: 10c0/9450d07c5cc6b13698fd41d8ba2b46d070fafdb682c0da1d4d38ad2f703da4b019f8ff52a873de778e456a11627a57480cf9dabec87f42fb99e84723118bae69
   languageName: node
   linkType: hard
 
