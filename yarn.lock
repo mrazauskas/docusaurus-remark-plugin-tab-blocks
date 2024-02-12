@@ -550,7 +550,7 @@ __metadata:
     dprint: "npm:0.45.0"
     eslint: "npm:8.56.0"
     remark: "npm:15.0.1"
-    remark-mdx: "npm:3.0.0"
+    remark-mdx: "npm:3.0.1"
     tstyche: "npm:1.0.0-rc.1"
     unist-util-is: "npm:^6.0.0"
     unist-util-visit: "npm:^5.0.0"
@@ -1729,13 +1729,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-mdx@npm:3.0.0":
-  version: 3.0.0
-  resolution: "remark-mdx@npm:3.0.0"
+"remark-mdx@npm:3.0.1":
+  version: 3.0.1
+  resolution: "remark-mdx@npm:3.0.1"
   dependencies:
     mdast-util-mdx: "npm:^3.0.0"
     micromark-extension-mdxjs: "npm:^3.0.0"
-  checksum: 10c0/e7a59428c55753f89f1bd299bc92cfd96fb3289285384b631f8af253d8df6473ebdba085e6d1a846b55b46700aafc76f35810a3268733e6a7c676bc2a8648f17
+  checksum: 10c0/9e16cd5ff3b30620bd25351a2dd1701627fa5555785b35ee5fe07bd1e6793a9c825cc1f6af9e54a44351f74879f8b5ea2bce8e5a21379aeab58935e76a4d69ce
   languageName: node
   linkType: hard
 
