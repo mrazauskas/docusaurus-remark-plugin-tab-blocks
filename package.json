@@ -44,7 +44,7 @@
     "eslint": "8.56.0",
     "remark": "15.0.1",
     "remark-mdx": "3.0.1",
-    "tstyche": "1.0.0-rc.1",
+    "tstyche": "1.0.0-rc.2",
     "uvu": "0.5.6"
   },
   "packageManager": "yarn@4.1.0",
