@@ -30,7 +30,7 @@
     "check": "dprint check",
     "format": "dprint fmt",
     "lint": "eslint . --config eslint.config.json --ext js",
-    "test": "uvu",
+    "test": "mocha",
     "test:coverage": "c8 --config c8.config.json yarn test",
     "test:types": "tstyche"
   },
@@ -39,13 +39,17 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@types/chai": "4.3.11",
+    "@types/mocha": "10.0.6",
     "c8": "9.1.0",
+    "chai": "5.1.0",
     "dprint": "0.45.0",
     "eslint": "8.56.0",
+    "eslint-plugin-mocha": "10.3.0",
+    "mocha": "10.3.0",
     "remark": "15.0.1",
     "remark-mdx": "3.0.1",
-    "tstyche": "1.0.0-rc.2",
-    "uvu": "0.5.6"
+    "tstyche": "1.0.0-rc.2"
   },
   "packageManager": "yarn@4.1.0",
   "engines": {
