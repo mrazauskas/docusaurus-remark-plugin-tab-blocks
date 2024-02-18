@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.1] - 2024-02-18
+
+### Fixed
+
+- Ship type definitions file ([#224](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/pull/224))
+
 ## [3.0.0] - 2023-11-13
 
 ### Added
