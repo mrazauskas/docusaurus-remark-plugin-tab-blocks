@@ -17,7 +17,7 @@ async function matchFile(source, fixtureName) {
   if (existsSync(fileUrl)) {
     const target = await fs.readFile(fileUrl, { encoding: "utf8" });
 
-    expect(source).to.equal(target);
+    expect(source.replace(/\r\n/g, "\n")).to.equal(target);
   } else {
     if (process.env["CI"] != null) {
       throw new Error("Snapshots cannot be created in CI environment.");
