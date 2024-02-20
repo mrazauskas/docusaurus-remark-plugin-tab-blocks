@@ -26,25 +26,17 @@ And you have:
 <img src="https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/.github/readme/quick-example.gif" width="640" />
 
 > [!NOTE]
+>
 > A Docusaurus theme with the `Tabs` and `TabItems` components is required.
 
 ## Install
-
-Use your favorite package manager to add `docusaurus-remark-plugin-tab-blocks` to a project:
 
 ```bash
 npm add docusaurus-remark-plugin-tab-blocks
 ```
 
-```bash
-yarn add docusaurus-remark-plugin-tab-blocks
-```
-
-```bash
-pnpm add docusaurus-remark-plugin-tab-blocks
-```
-
 > [!NOTE]
+>
 > Current version of the plugin only works with Docusaurus 3. For Docusaurus 2, you should install `docusaurus-remark-plugin-tab-blocks@1.3.1`.
 
 ## Usage
