@@ -8,6 +8,5 @@
   "files.associations": {
     "dprint.json": "jsonc",
     "eslint.config.json": "jsonc"
-  },
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  }
 }
