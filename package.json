@@ -28,7 +28,7 @@
     "format": "dprint fmt",
     "lint": "eslint . --config eslint.config.json --ext js",
     "test": "mocha",
-    "test:coverage": "c8 --config c8.config.json yarn test",
+    "test:coverage": "c8 --config c8.config.json npm test",
     "test:types": "tstyche"
   },
   "dependencies": {
@@ -48,7 +48,6 @@
     "remark-mdx": "3.0.1",
     "tstyche": "1.0.0"
   },
-  "packageManager": "yarn@4.1.0",
   "engines": {
     "node": ">=18.0"
   }

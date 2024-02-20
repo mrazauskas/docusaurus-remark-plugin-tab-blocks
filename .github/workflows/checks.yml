@@ -19,10 +19,9 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: corepack enable
-      - run: yarn install
-      - run: yarn check
-      - run: yarn lint
+      - run: npm install
+      - run: npm run check
+      - run: npm run lint
 
   test-types:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
@@ -33,9 +32,8 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: corepack enable
-      - run: yarn install
-      - run: yarn test:types --target 4.8,5.0,latest
+      - run: npm install
+      - run: npm run test:types -- --target 4.8,5.0,latest
 
   test-node:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
@@ -52,9 +50,8 @@ jobs:
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: corepack enable
-      - run: yarn install
-      - run: yarn test
+      - run: npm install
+      - run: npm run test
 
   test-os:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
@@ -70,9 +67,8 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: corepack enable
-      - run: yarn install
-      - run: yarn test
+      - run: npm install
+      - run: npm run test
 
   test-coverage:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
@@ -84,9 +80,8 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: corepack enable
-      - run: yarn install
-      - run: yarn test:coverage
+      - run: npm install
+      - run: npm run test:coverage
       - uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699 # v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
