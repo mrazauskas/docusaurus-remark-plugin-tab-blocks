@@ -15,6 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks.git"
   },
+  "funding": "https://github.com/sponsors/mrazauskas",
   "license": "MIT",
   "type": "module",
   "exports": "./index.js",
