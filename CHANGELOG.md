@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.1.0] - 2024-02-20
+
+### Added
+
+- Expose `package.json` ([#225](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/pull/225))
+
 ## [3.0.1] - 2024-02-18
 
 ### Fixed
@@ -57,6 +63,7 @@
 
 _First release._
 
+[3.1.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v3.1.0
 [3.0.1]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v3.0.1
 [3.0.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v3.0.0
 [2.0.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v2.0.0
