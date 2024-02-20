@@ -9,10 +9,7 @@
     "tab",
     "tabblock",
     "code",
-    "codeblock",
-    "markdown",
-    "md",
-    "mdx"
+    "codeblock"
   ],
   "repository": {
     "type": "git",
