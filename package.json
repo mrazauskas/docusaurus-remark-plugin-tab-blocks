@@ -48,7 +48,7 @@
     "mocha": "10.3.0",
     "remark": "15.0.1",
     "remark-mdx": "3.0.1",
-    "tstyche": "1.0.0-rc.2"
+    "tstyche": "1.0.0"
   },
   "packageManager": "yarn@4.1.0",
   "engines": {

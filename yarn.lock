@@ -814,7 +814,7 @@ __metadata:
     mocha: "npm:10.3.0"
     remark: "npm:15.0.1"
     remark-mdx: "npm:3.0.1"
-    tstyche: "npm:1.0.0-rc.2"
+    tstyche: "npm:1.0.0"
     unist-util-is: "npm:^6.0.0"
     unist-util-visit: "npm:^5.0.0"
   languageName: unknown
@@ -2923,9 +2923,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tstyche@npm:1.0.0-rc.2":
-  version: 1.0.0-rc.2
-  resolution: "tstyche@npm:1.0.0-rc.2"
+"tstyche@npm:1.0.0":
+  version: 1.0.0
+  resolution: "tstyche@npm:1.0.0"
   peerDependencies:
     typescript: 4.x || 5.x
   peerDependenciesMeta:
@@ -2933,7 +2933,7 @@ __metadata:
       optional: true
   bin:
     tstyche: ./build/bin.js
-  checksum: 10c0/b8562c61eae53a991605ae0e8f4e8362388233620049f8eb33f9b928f1ce05fea63fefd6f9c355e7ab023d407db1d3d2749594cd3ac52276ef90664173fcff83
+  checksum: 10c0/79083a3bdc0db3cd1ba4c7205b47b9c3c0bdf5ef56db13cd1d1953dc1d8b0d4d88fa125e20f42d01b4d9e6b205c2477105e9f1908dd5451e33bb27ca327ff479
   languageName: node
   linkType: hard
 
