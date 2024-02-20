@@ -18,7 +18,10 @@
   "funding": "https://github.com/sponsors/mrazauskas",
   "license": "MIT",
   "type": "module",
-  "exports": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
   "files": [
     "index.d.ts",
     "index.js"
