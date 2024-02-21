@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: npm install
+      - run: npm ci
       - run: npm run check
       - run: npm run lint
 
@@ -32,7 +32,7 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: npm install
+      - run: npm ci
       - run: npm run test:types -- --target 4.8,5.0,latest
 
   test-node:
@@ -50,7 +50,7 @@ jobs:
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
+      - run: npm ci
       - run: npm run test
 
   test-os:
@@ -67,7 +67,7 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: npm install
+      - run: npm ci
       - run: npm run test
 
   test-coverage:
@@ -80,7 +80,7 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: npm install
+      - run: npm ci
       - run: npm run test:coverage
       - uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699 # v1
         with:
