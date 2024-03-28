@@ -49,7 +49,7 @@
     "mocha": "10.4.0",
     "remark": "15.0.1",
     "remark-mdx": "3.0.1",
-    "tstyche": "1.1.0"
+    "tstyche": "2.0.0-beta.0"
   },
   "engines": {
     "node": ">=18.0"

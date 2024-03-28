@@ -9,12 +9,12 @@ test("tabBlocks()", () => {
 });
 
 test("Options", () => {
-  expect(options).type.toBeAssignable({ groupId: "code-examples" });
-  expect(options).type.toBeAssignable({
+  expect(options).type.toBeAssignableWith({ groupId: "code-examples" });
+  expect(options).type.toBeAssignableWith({
     labels: [
       ["js", "JavaScript"] as [string, string],
       ["ts", "TypeScript"] as [string, string],
     ],
   });
-  expect(options).type.toBeAssignable({ sync: true });
+  expect(options).type.toBeAssignableWith({ sync: true });
 });
