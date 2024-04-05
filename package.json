@@ -44,7 +44,7 @@
     "c8": "9.1.0",
     "chai": "5.1.0",
     "dprint": "0.45.1",
-    "eslint": "8.57.0",
+    "eslint": "9.0.0",
     "eslint-plugin-mocha": "10.4.1",
     "mocha": "10.4.0",
     "remark": "15.0.1",
