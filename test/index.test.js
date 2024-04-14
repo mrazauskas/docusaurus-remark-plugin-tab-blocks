@@ -1,6 +1,6 @@
+import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import fs from "node:fs/promises";
-import { expect } from "chai";
 import { describe, test } from "mocha";
 import { remark } from "remark";
 import remarkMdx from "remark-mdx";
@@ -20,7 +20,8 @@ async function matchFile(source, fixtureName) {
   if (existsSync(fileUrl)) {
     const target = await fs.readFile(fileUrl, { encoding: "utf8" });
 
-    expect(source.replace(/\r\n/g, "\n")).to.equal(
+    assert.strictEqual(
+      source.replace(/\r\n/g, "\n"),
       target.replace(/\r\n/g, "\n"),
     );
   } else {
@@ -49,7 +50,7 @@ async function processFixture(fixtureName, options) {
   return result.toString();
 }
 
-describe("tabBlocks", () => {
+describe("tabBlocks()", () => {
   test("base example", async () => {
     const fixtureName = "base";
     const result = await processFixture(fixtureName);
