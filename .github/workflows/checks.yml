@@ -10,9 +10,9 @@ on:
       - main
 
 jobs:
-  lint:
+  quality:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
-    name: Lint
+    name: Code Quality
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
@@ -20,8 +20,7 @@ jobs:
         with:
           node-version: lts/*
       - run: npm ci
-      - run: npm run check
-      - run: npm run lint
+      - run: npx biome ci .
 
   test-types:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))

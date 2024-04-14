@@ -1,9 +1,9 @@
 import { existsSync } from "node:fs";
 import fs from "node:fs/promises";
-import { remark } from "remark";
-import remarkMdx from "remark-mdx";
 import { expect } from "chai";
 import { describe, test } from "mocha";
+import { remark } from "remark";
+import remarkMdx from "remark-mdx";
 
 import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
 
@@ -12,12 +12,17 @@ import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
  * @param {string} fixtureName
  */
 async function matchFile(source, fixtureName) {
-  const fileUrl = new URL(`__snapshots__/${fixtureName}.snap.md`, import.meta.url);
+  const fileUrl = new URL(
+    `__snapshots__/${fixtureName}.snap.md`,
+    import.meta.url,
+  );
 
   if (existsSync(fileUrl)) {
     const target = await fs.readFile(fileUrl, { encoding: "utf8" });
 
-    expect(source.replace(/\r\n/g, "\n")).to.equal(target.replace(/\r\n/g, "\n"));
+    expect(source.replace(/\r\n/g, "\n")).to.equal(
+      target.replace(/\r\n/g, "\n"),
+    );
   } else {
     if (process.env["CI"] != null) {
       throw new Error("Snapshots cannot be created in CI environment.");
