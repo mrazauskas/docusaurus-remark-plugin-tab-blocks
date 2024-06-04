@@ -44,7 +44,7 @@
     "mocha": "10.4.0",
     "remark": "15.0.1",
     "remark-mdx": "3.0.1",
-    "tstyche": "2.0.0-rc.0"
+    "tstyche": "2.0.0-rc.1"
   },
   "engines": {
     "node": ">=18.0"
