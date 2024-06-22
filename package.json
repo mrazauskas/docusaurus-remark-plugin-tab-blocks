@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.2",
-    "@types/mocha": "10.0.6",
+    "@types/mocha": "10.0.7",
     "c8": "10.1.2",
     "mocha": "10.4.0",
     "remark": "15.0.1",
