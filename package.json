@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "mocha": "10.6.0",
+    "mocha": "10.7.0",
     "monocart-coverage-reports": "2.9.3",
     "remark": "15.0.1",
     "remark-mdx": "3.0.1",
