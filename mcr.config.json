@@ -1,0 +1,10 @@
+{
+  "entryFilter": {
+    "**/node_modules/**": false,
+    "**/test/**": false,
+
+    "**/*.js": true
+  },
+  "outputDir": "./coverage",
+  "reports": ["console-details", "lcovonly"]
+}

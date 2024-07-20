@@ -1,6 +1,0 @@
-{
-  "all": true,
-  "include": ["**/*.js"],
-  "reporter": ["lcovonly", "text"],
-  "tempDirectory": "./coverage/temp"
-}
