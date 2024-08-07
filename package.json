@@ -40,7 +40,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "monocart-coverage-reports": "2.10.1",
-    "poku": "2.4.0",
+    "poku": "2.4.1",
     "remark": "15.0.1",
     "remark-mdx": "3.0.1",
     "tstyche": "2.1.1"
