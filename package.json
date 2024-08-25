@@ -43,7 +43,7 @@
     "poku": "2.5.0",
     "remark": "15.0.1",
     "remark-mdx": "3.0.1",
-    "tstyche": "3.0.0-beta.0"
+    "tstyche": "3.0.0-beta.1"
   },
   "engines": {
     "node": ">=18.0"
