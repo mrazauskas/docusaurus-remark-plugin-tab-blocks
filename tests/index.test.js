@@ -1,6 +1,7 @@
+import assert from "node:assert";
 import { existsSync } from "node:fs";
 import fs from "node:fs/promises";
-import { assert, test } from "poku";
+import test from "node:test";
 import { remark } from "remark";
 import remarkMdx from "remark-mdx";
 
