@@ -42,7 +42,7 @@
     "monocart-coverage-reports": "2.11.5",
     "remark": "15.0.1",
     "remark-mdx": "3.1.0",
-    "tstyche": "3.3.0"
+    "tstyche": "3.3.1"
   },
   "engines": {
     "node": ">=18.0"
