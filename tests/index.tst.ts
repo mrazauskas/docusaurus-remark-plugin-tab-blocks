@@ -5,8 +5,8 @@ import tabBlocks, { type Options } from "docusaurus-remark-plugin-tab-blocks";
 const options: Options = {};
 
 test("tabBlocks()", () => {
-  expect(tabBlocks()).type.toBeVoid();
-  expect(tabBlocks(options)).type.toBeVoid();
+  expect(tabBlocks()).type.toBe<void>();
+  expect(tabBlocks(options)).type.toBe<void>();
 });
 
 test("Options", () => {
