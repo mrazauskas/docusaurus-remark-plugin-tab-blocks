@@ -2,10 +2,9 @@ import assert from "node:assert";
 import { existsSync } from "node:fs";
 import fs from "node:fs/promises";
 import test from "node:test";
+import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
 import { remark } from "remark";
 import remarkMdx from "remark-mdx";
-
-import tabBlocks from "docusaurus-remark-plugin-tab-blocks";
 
 /**
  * @param {string} source
