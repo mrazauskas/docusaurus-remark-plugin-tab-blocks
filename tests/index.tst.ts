@@ -1,6 +1,5 @@
-import { expect, test } from "tstyche";
-
 import tabBlocks, { type Options } from "docusaurus-remark-plugin-tab-blocks";
+import { expect, test } from "tstyche";
 
 const options: Options = {};
 

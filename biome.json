@@ -1,7 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
   "files": {
-    "ignore": ["coverage/**", "package.json"]
+    "includes": ["**", "!**/coverage/**"]
   },
 
   "formatter": {
@@ -12,6 +12,7 @@
 
   "linter": {
     "enabled": true,
+
     "rules": {
       "recommended": true,
 
@@ -26,8 +27,16 @@
       },
 
       "style": {
-        "noParameterAssign": "off",
-        "noNegationElse": "error"
+        "noNegationElse": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error"
       },
 
       "suspicious": {
@@ -36,21 +45,5 @@
     }
   },
 
-  "organizeImports": {
-    "enabled": true
-  },
-
-  "overrides": [
-    {
-      "include": ["test/**"],
-      "linter": {
-        "rules": {
-          "complexity": {
-            "noForEach": "off",
-            "useArrowFunction": "off"
-          }
-        }
-      }
-    }
-  ]
+  "assist": { "actions": { "source": { "organizeImports": "on" } } }
 }
