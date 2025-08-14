@@ -1,7 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
   "files": {
-    "includes": ["**", "!**/coverage/**"]
+    "includes": ["**", "!**/coverage"]
   },
 
   "formatter": {
@@ -45,5 +45,10 @@
     }
   },
 
-  "assist": { "actions": { "source": { "organizeImports": "on" } } }
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "recommended": true
+    }
+  }
 }
