@@ -1,20 +1,22 @@
 import tabBlocks, { type Options } from "docusaurus-remark-plugin-tab-blocks";
 import { expect, test } from "tstyche";
 
-const options: Options = {};
-
 test("tabBlocks()", () => {
+  const options: Options = {};
+
   expect(tabBlocks()).type.toBe<void>();
   expect(tabBlocks(options)).type.toBe<void>();
 });
 
 test("Options", () => {
-  expect(options).type.toBeAssignableWith({ groupId: "code-examples" });
-  expect(options).type.toBeAssignableWith({
+  expect<Options>().type.toBeAssignableFrom({});
+
+  expect<Options>().type.toBeAssignableFrom({ groupId: "code-examples" });
+  expect<Options>().type.toBeAssignableFrom({
     labels: [
       ["js", "JavaScript"] as [string, string],
       ["ts", "TypeScript"] as [string, string],
     ],
   });
-  expect(options).type.toBeAssignableWith({ sync: true });
+  expect<Options>().type.toBeAssignableFrom({ sync: true });
 });
