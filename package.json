@@ -38,7 +38,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.6",
+    "@biomejs/biome": "2.3.7",
     "monocart-coverage-reports": "2.12.9",
     "remark": "15.0.1",
     "remark-mdx": "3.1.1",
