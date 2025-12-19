@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: lts/*
       - run: npm ci
-      - run: npm run test:types -- --target '>=5.0'
+      - run: npm run test:types -- --target '>=5.4'
 
   test-node:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
