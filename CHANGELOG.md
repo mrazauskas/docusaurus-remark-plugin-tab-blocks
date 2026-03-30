@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.0.0] - 2023-10-31
+
+### Changed
+
+- **Breaking:** Drop support for Node.js 18 ([#258](https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/pull/258))
+
 ## [3.1.0] - 2024-02-20
 
 ### Added
@@ -63,6 +69,7 @@
 
 _First release._
 
+[4.0.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v4.0.0
 [3.1.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v3.1.0
 [3.0.1]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v3.0.1
 [3.0.0]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/releases/tag/v3.0.0
