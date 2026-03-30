@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: lts/*
       - run: npm ci
-      - run: npm run test:types -- --target '>=5.4'
+      - run: npm run test:types
 
   test-node:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
@@ -43,7 +43,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [18.x, 20.x, 21.x, 22.x, 24.x]
+        node-version: [20.x, 22.x, 24.x]
     runs-on: ubuntu-latest
 
     steps:
