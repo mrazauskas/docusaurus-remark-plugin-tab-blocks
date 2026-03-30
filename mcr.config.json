@@ -6,5 +6,5 @@
     "**/*.js": true
   },
   "outputDir": "./coverage",
-  "reports": ["console-details", "lcovonly"]
+  "reports": ["console-details", "codecov"]
 }

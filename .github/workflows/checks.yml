@@ -84,7 +84,10 @@ jobs:
           node-version: lts/*
       - run: npm ci
       - run: npm run test:coverage
-      - uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699 # v1
+      - uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2 # v6
         with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: ./coverage/lcov.info
+          disable_search: true
+          fail_ci_if_error: true
+          files: ./coverage/codecov.json
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

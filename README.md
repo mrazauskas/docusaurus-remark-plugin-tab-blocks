@@ -2,7 +2,7 @@
 
 [![version][version-badge]][version-url]
 [![license][license-badge]][license-url]
-[![packagephobia][packagephobia-badge]][packagephobia-url]
+[![install-size][install-size-badge]][install-size-url]
 [![coverage][coverage-badge]][coverage-url]
 
 Turn Docusaurus code blocks into tab blocks.
@@ -169,7 +169,7 @@ The example above will be rendered like this:
 [version-url]: https://npmjs.com/package/docusaurus-remark-plugin-tab-blocks
 [license-badge]: https://badgen.net/github/license/mrazauskas/docusaurus-remark-plugin-tab-blocks
 [license-url]: https://github.com/mrazauskas/docusaurus-remark-plugin-tab-blocks/blob/main/LICENSE.md
-[packagephobia-badge]: https://badgen.net/packagephobia/install/docusaurus-remark-plugin-tab-blocks
-[packagephobia-url]: https://packagephobia.com/result?p=docusaurus-remark-plugin-tab-blocks
-[coverage-badge]: https://badgen.net/codacy/coverage/8a373a32f9264faebc40b5ca292894bd
-[coverage-url]: https://app.codacy.com/gh/mrazauskas/docusaurus-remark-plugin-tab-blocks/coverage/dashboard
+[install-size-badge]: https://badgen.net/packagephobia/install/docusaurus-remark-plugin-tab-blocks
+[install-size-url]: https://packagephobia.com/result?p=docusaurus-remark-plugin-tab-blocks
+[coverage-badge]: https://badgen.net/codecov/github/mrazauskas/docusaurus-remark-plugin-tab-blocks
+[coverage-url]: https://app.codecov.io/gh/mrazauskas/docusaurus-remark-plugin-tab-blocks
